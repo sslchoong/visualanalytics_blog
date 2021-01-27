@@ -1,0 +1,36 @@
+[
+  {
+    "path": "posts/2021-01-26-dataviz-makeover-1/",
+    "title": "DataViz Makeover 1",
+    "description": "A makeover of the data visualisation on Resident Labour Force.",
+    "author": [
+      {
+        "name": "Selene Choong",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-01-26",
+    "categories": [],
+    "contents": "\r\n1.0 Critiques of data visualisation\r\n2.0 Ways to improve current design\r\n3.0 Proposed data visualisation\r\n4.0 Step-by-step description on preparation\r\n5.0 Major observations revealed\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-01-26T02:39:14+08:00",
+    "input_file": "dataviz-makeover-1.utf8.md"
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to Visual Analytics",
+    "description": "Welcome to my blog documenting all my works for ISSS608 Visual Analytics \n& Applications. I hope you enjoy reading what I have created!",
+    "author": [
+      {
+        "name": "Selene Choong",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-01-18",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-01-26T02:14:36+08:00",
+    "input_file": "welcome.utf8.md"
+  }
+]

@@ -1,0 +1,32 @@
+---
+title: "DataViz Makeover 1"
+description: |
+  A makeover of the data visualisation on Resident Labour Force.
+author:
+  - name: Selene Choong
+    url: https://example.com/norajones
+    affiliation: School of Computing and Information Systems, Singapore Management University
+date: 01-26-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 1.0 Critiques of data visualisation
+
+
+# 2.0 Ways to improve current design
+
+
+# 3.0 Proposed data visualisation
+
+
+# 4.0 Step-by-step description on preparation
+
+
+# 5.0 Major observations revealed
