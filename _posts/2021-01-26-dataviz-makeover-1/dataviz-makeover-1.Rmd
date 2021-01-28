@@ -16,12 +16,11 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# 1.0 Critiques of Existing Visualisation with Suggested Improvements
+# 1.0  Critiques of Existing Visualisation with Suggested Improvements
 
 ```{r, echo=FALSE, echo=FALSE, message=FALSE}
 
-library(knitr)
-include_graphics("images/Fig1_ExistingViz.png")
+knitr::include_graphics("images/Fig1_ExistingViz.png")
 ```
 
 ### Clarity
@@ -43,14 +42,13 @@ include_graphics("images/Fig1_ExistingViz.png")
 | 8 | There is currently no y-axis and no indication of the data units being shown in the line chart. It might not be clear to the readers what data are being represented by the 2 lines in the chart. | Add the necessary labelling for the axis to allow readers to clearly identify the data that is being charted |
 
 
-# 2.0 Ways to Improve Current Visualisation
+# 2.0  Ways to Improve Current Visualisation
 
 ### Sketch of Proposed Design
 
 ```{r, echo=FALSE, message=FALSE}
 
-library(knitr)
-include_graphics("images/Fig2_Sketch.jpg")
+knitr::include_graphics("images/Fig2_Sketch.jpg")
 ```
 
 - The usage of bar charts instead of line charts can better represent the data which was grouped into categorical age bands. Presentation of the data in sequential age bands of around 5 years was kept which allows readers to see the differences across the age groups on a more detailed level.
@@ -59,7 +57,7 @@ include_graphics("images/Fig2_Sketch.jpg")
 -	Separating the median age from the chart also prevents confusion since the age data was not being shown as a continuous variable.
 
 
-# 3.0 Step-by-step Description on Preparation
+# 3.0  Step-by-step Description on Preparation
 
 |S/N| Interface | Step | Action |
 |:-:| :----- | :----- | :-------------------------------------------------------- |
@@ -83,9 +81,18 @@ include_graphics("images/Fig2_Sketch.jpg")
 | 18 | Dashboard | Add in the median ages | • Add in the median ages for 2009 and 2019 with the label of Median Age as separate text boxes under the LFPR_Nett table <br> • Colour code the median ages by the year |
 | 19 | Data Source | Publish onto Tableau Public | Convert the connection from Live to Extract to allow publishing to Tableau Public <br> ![](images/Step19.png){width=60%} |
 
+
+# 4.0  Final Data Visualisation Output
+
+```{r, echo=FALSE, message=FALSE, layout="l-body-outset"}
+
+knitr::include_graphics("images/Dashboard.png")
+```
+
 **Link to Tableau Dashboard:** https://public.tableau.com/profile/selenechoong#!/vizhome/ISSS608_DataViz_Makeover_01/Dashboard
 
-# 4.0 Major Observations
+
+# 5.0  Major Observations
 
 **Observation 1:** <br>
 Between 2009 to 2019, share of the middle-aged residents (aged 25 - 54) among the resident labour force has declined (75.3% in 2009 to 67.4% in 2019), despite the increase in Labour Force Participation Rate (LFPR) among these middle-aged residents.
