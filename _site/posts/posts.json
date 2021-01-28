@@ -2,7 +2,7 @@
   {
     "path": "posts/2021-01-26-dataviz-makeover-1/",
     "title": "DataViz Makeover 1",
-    "description": "A makeover of the data visualisation on Resident Labour Force.",
+    "description": "A makeover of the data visualisation on Resident Labour Force. The original data visualisation can be found on Page 22 of Report: Labour Force in Singapore 2019 (https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx).",
     "author": [
       {
         "name": "Selene Choong",
@@ -11,9 +11,9 @@
     ],
     "date": "2021-01-26",
     "categories": [],
-    "contents": "\r\n1.0 Critiques of data visualisation\r\n2.0 Ways to improve current design\r\n3.0 Proposed data visualisation\r\n4.0 Step-by-step description on preparation\r\n5.0 Major observations revealed\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2021-01-26T02:39:14+08:00",
+    "contents": "\r\n1.0 Critiques of data visualisation\r\n\r\n\r\n\r\nClarity\r\nS/N\r\nComments\r\n1\r\nLead-in paragraph is informative and discusses about both the change in the Labour Force Participation Rate (LFPR) and in the share of the resident labour force by age groups from 2009 to 2019. However, the current chart only shows the share of the resident labour force by age groups. No data is shown to depict the change in the LFPR, which might confuse the readers on the data being referenced in the analysis.\r\n2\r\nLead-in paragraph cites the percentages as the sum of broader age bands (e.g. aged 25 to 54 instead of the 5-year age band of 25-29, 30-34 to 50-54) making it difficult for the readers to relate the figures with the chart directly.\r\n3\r\nTitle of the existing chart might be confusing as “Resident labour force by age” might be interpreted as the actual number of residents that are in the labour force for each age band but the current unit for the chart is in percent.\r\n4\r\nData are being represented in age bands on the x-axis. Using line chart makes it difficult for readers to identify the corresponding points for age group on the x-axis. Also, the use of line chart might mislead the reader to interpret the data as being time-series data. Line charts are not advisable to be used for comparison of categorical data.\r\n5\r\nWhile having the reference line for the median age is useful for comparing between the 2 years, charting it on the x-axis which is shown in terms of age bands is confusing.\r\nAesthetics\r\nS/N\r\nComments\r\n1\r\nChoice of font, font size and layout is generally clear with the title of the chart at the top left corner of the chart. Labels on x-axis are clearly displayed horizontally.\r\n2\r\nThe use of colour coding (grey for 2009 and blue for 2019) helps readers to easily distinguish the data between the 2 years. The more recent year of 2019 also stands out since the blue colour used is brighter.\r\n3\r\nThere is currently no y-axis and no indication of the data units being shown in the line chart. It might not be clear to the readers what data are being represented by the 2 lines in the chart.\r\n2.0 Ways to improve current design\r\n3.0 Proposed data visualisation\r\n4.0 Step-by-step description on preparation\r\n5.0 Major observations revealed\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-01-26-dataviz-makeover-1/images/Fig1_ExistingViz.png",
+    "last_modified": "2021-01-28T15:49:56+08:00",
     "input_file": "dataviz-makeover-1.utf8.md"
   },
   {
