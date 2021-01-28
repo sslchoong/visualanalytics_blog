@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/kePrint-0.0.1/kePrint.js","dataviz-makeover-1_files/lightable-0.0.1/lightable.css","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/Fig1_ExistingViz.png","images/Fig2_Sketch.jpg","images/Obs1_MiddleAged.jpg","images/Obs2_LFPR.jpg","images/Obs3_20-24.jpg","images/Obs4_distribution.jpg"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/kePrint-0.0.1/kePrint.js","dataviz-makeover-1_files/lightable-0.0.1/lightable.css","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/Fig1_ExistingViz.png","images/Fig2_Sketch.jpg","images/Obs1_MiddleAged.jpg","images/Obs2_LFPR.jpg","images/Obs3_20-24.jpg","images/Obs4_distribution.jpg","images/Step1.png","images/Step10_1.png","images/Step10_2.png","images/Step11.png","images/Step13.png","images/Step17.png","images/Step19.png","images/Step3.png","images/Step4.png","images/Step6_1.png","images/Step6_2.png","images/Step7.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2184,11 +2184,143 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <ul>
 <li>The usage of bar charts instead of line charts can better represent the data which was grouped into categorical age bands. Presentation of the data in sequential age bands of around 5 years was kept which allows readers to see the differences across the age groups on a more detailed level.</li>
-<li>Addition of the chart on the Labour Force Participation Rate (LFPR) as well as the netted percentages across age bands allows for consistency in the information described in the lead-in paragraph and the charts, where readers can easily identify the source of the data in the visualisation.</li>
+<li>Addition of the chart on the Labour Force Participation Rate (LFPR) as well as the net percentages across age bands for the share of Labour Force allows for consistency in the information described in the lead-in paragraph and the charts, where readers can easily identify the source of the data in the visualisation.</li>
 <li>Having the two charts with the corresponding age bands side-by-side allows the readers to easily see how the share and the LFPR has changed for each age band and compare across the age bands.</li>
 <li>Separating the median age from the chart also prevents confusion since the age data was not being shown as a continuous variable.</li>
 </ul>
 <h1 id="step-by-step-description-on-preparation">3.0 Step-by-step Description on Preparation</h1>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">S/N</th>
+<th style="text-align: left;">Interface</th>
+<th style="text-align: left;">Step</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Excel Tables</td>
+<td style="text-align: left;">Data preparation - Extract relevant data and format into proper structure</td>
+<td style="text-align: left;">Perform the following steps for Table 5 and Table 7: <br> • Extract data from the Total tab, keeping only column data for 2009 and 2019 as well as row data for the header and the individual age bands (i.e. rows 5, 7 to 18) <br> • Format the structure to remove all the leading empty rows (i.e. header to start at row 1) and all the empty columns so that the data is in the correct format for importing into Tableau <br> <img src="images/Step1.png" style="width:90.0%" /> <br> Save the extracted data into a new excel file with one table on each worksheet tab</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Excel Tables</td>
+<td style="text-align: left;">Data preparation - Format row labels</td>
+<td style="text-align: left;">Remove the extra white spaces in the age labels (e.g. from “15 - 19” to “15 - 19”)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Data Source</td>
+<td style="text-align: left;">Import data into Tableau</td>
+<td style="text-align: left;">• Under Connect to a File, click Microsoft Excel and select the relevant excel file from the correct directory <br> • Relate Table 5 and Table 7 using the common variable of Age (Years) <br> <img src="images/Step3.png" style="width:80.0%" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Sheet 1 (LF_Share)</td>
+<td style="text-align: left;">Create pyramid chart for Share of Resident Labour Force by Age</td>
+<td style="text-align: left;">Drag T7 Age under Rows, T7 2009 and T7 2019 under Columns <br> <img src="images/Step4.png" style="width:90.0%" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Sheet 1 (LF_Share)</td>
+<td style="text-align: left;">Convert the measures into percent</td>
+<td style="text-align: left;">Use quick table calculations and convert both T7 2009 and T7 2019 to percent of total (i.e. value shown in the original chart)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Sheet 1 (LF_Share)</td>
+<td style="text-align: left;">Format the charts</td>
+<td style="text-align: left;">• Edit the x-axis of the 2009 chart and select “Reversed” to reverse the axis of the chart on the left <br> <img src="images/Step6_1.png" style="width:80.0%" /> <br> • Click on Label and select “Show marks labels” to add the chart labels for both 2009 and 2019 charts <br> • Format the measures to display them to 1 decimal place by changing the “Numbers” under Default section of the Pane tab to Percentages 1 decimal place <br> • Right click on the x-axis and select Edit Axis. Fix the range to have a consistent range for both left and right charts <br> • Colour code the 2 charts into 2 different colours by year using the Colour button under the Marks cart <br> • Remove the vertical gridlines under Format Lines by changing the “Grid Lines” of the Column tab to None <br> • Edit the Tooltip under the Marks cart for the label of the % to “% out of Total in [YYYY]” <br> <img src="images/Step6_2.png" style="width:90.0%" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Sheet 1 (LF_Share)</td>
+<td style="text-align: left;">Format the charts – Add the x-axis at the top of the chart</td>
+<td style="text-align: left;">• Drag another T7 2009 (after the current T7 2009) and T7 2019 (after the current T7 2019) under Columns <br> • Change the chart type back to Bar for all charts <br> • Use quick table calculations and convert the new T7 2009 and T7 2019 to percent of total <br> • For each of the new measure added, click on the arrow and select “Dual Axis” to merge the charts of the same measure as one <br> <img src="images/Step7.png" style="width:80.0%" /> <br> • Change the colour of the charts for the two new measures to Opacity = 0% under their corresponding Marks cart <br> • Right click on the x-axis at the top and select “Synchronize Axis” <br> • “Remove” the bottom x-axis for both charts by selecting Edit Axis then clear the Title text box under Titles and select None for both Major tick marks and Minor tick marks under the Tick Marks tab <br> • Change the top x-axis to show only the label of “% in June [YYYY]” by selecting Edit Axis then revise the Title text box under Titles and select None for both Major tick marks and Minor tick marks under the Tick Marks tab</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Sheet 1 (LF_Share)</td>
+<td style="text-align: left;">Add chart title</td>
+<td style="text-align: left;">Title of the chart was changed to “Share of Resident Labour Force by Age” with the unit of Per cent added below by clicking on the Title to edit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Data Source</td>
+<td style="text-align: left;">Transform data into required format</td>
+<td style="text-align: left;">• Pivot the columns T5 2009 and T5 2019 <br> • Rename “Pivot Field Names” to “Year”, “Pivot Field Values” to “LFPR”</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Sheet 2 (LFPR)</td>
+<td style="text-align: left;">Create dumbbell chart for LFPR by Age</td>
+<td style="text-align: left;">• Drag T5 Age under Rows, LFPR under Columns and Year under Colour <br> • Change the mark type from Automatic to Circle <br> <img src="images/Step10_1.png" style="width:95.0%" /> <br> • Drag another LFPR under Columns and change the mark type to Line <br> • Remove Year from Colour and drag it to Path <br> <img src="images/Step10_2.png" style="width:95.0%" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Sheet 2 (LFPR)</td>
+<td style="text-align: left;">Format the chart</td>
+<td style="text-align: left;">• Right click on the second pill of LFPR and select “Dual Axis” <br> • Right click on one of the x-axis and select “Synchronise Axis” <br> • Swop the order of the two LFPR pills such that the line appears behind the dots <br> • Rename the bottom x-axis to “% LFPR” <br> • Hide the top x-axis by right clicking the x-axis and unselecting “Show Header” <br> • Colour code the dots for the 2 years into the 2 corresponding colours used in the previous chart in Sheet 1 <br> • Increase the size of the dots and the thickness of the line <br> <img src="images/Step11.png" style="width:95.0%" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Sheet 2 (LFPR)</td>
+<td style="text-align: left;">Add Chart Title</td>
+<td style="text-align: left;">Title of the chart was changed to “Resident Labour Force Participation Rate by Age” with the unit of Per cent added below by clicking on the Title to edit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Sheet 3 (LF_Nett)</td>
+<td style="text-align: left;">Create new calculated field with recoded age bands</td>
+<td style="text-align: left;">Recode the age into broader age bands using “Create Calculated Fields…” and input the details below <br> <img src="images/Step13.png" style="width:80.0%" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Sheet 3 (LF_Nett)</td>
+<td style="text-align: left;">Create table with Share of Resident Labour Force by broader age bands</td>
+<td style="text-align: left;">• Drag Age_Nett under Rows, Measure Names under Columns and Measure Values under Text <br> • Remove the irrelevant measures under Measure Values to keep only T7 2009 and T7 2019 <br> • Use quick table calculations and convert both T7 2009 and T7 2019 under Measure Values to percent of total</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">Sheet 3 (LF_Nett)</td>
+<td style="text-align: left;">Format the table</td>
+<td style="text-align: left;">• Right click on the header and unselect “Show Header” <br> • Right click on the header of the rows and select “Hide Field Labels for Rows” <br> • Click on the arrow for each measure under Measure Values and format to display them to 1 decimal place by changing the “Numbers” under Default section of the Pane tab to Percentages 1 decimal place <br> • Right click on the table and add table border under the Format Border <br> • Rearrange the rows in ascending age order by dragging the rows to the correct position</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">Dashboard</td>
+<td style="text-align: left;">Create the Dashboard, Add Title and Format</td>
+<td style="text-align: left;">• Create a new dashboard sheet. Drag LF_Share and LFPR from the Sheets cart into the dashboard sheet to be displayed side by side. Drag LF_Nett under the LF_Share chart <br> • Select “Show Title” under Dashboard. Title of the dashboard was changed to “Increase in older residents in the labour force from 2009 to 2019”, with the year colour coded <br> • Add in a text box under the Title to add in the lead-in paragraph</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">17</td>
+<td style="text-align: left;">Dashboard</td>
+<td style="text-align: left;">Format the Legend</td>
+<td style="text-align: left;">• Rearrange the legend to display it under the LFPR chart <br> • Right click on each legend and click “Edit Alias” to rename each legend label to “June [YYYY]” <br> • Click more options on the left of the Legend, select “Arrange items” and Single Row <br> <img src="images/Step17.png" style="width:80.0%" /> <br> • Add a Blank to the left of the Legend to right align the Legend relative to the LFPR chart</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">Dashboard</td>
+<td style="text-align: left;">Add in the median ages</td>
+<td style="text-align: left;">• Add in the median ages for 2009 and 2019 with the label of Median Age as separate text boxes under the LFPR_Nett table <br> • Colour code the median ages by the year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">19</td>
+<td style="text-align: left;">Data Source</td>
+<td style="text-align: left;">Publish onto Tableau Public</td>
+<td style="text-align: left;">Convert the connection from Live to Extract to allow publishing to Tableau Public <br> <img src="images/Step19.png" style="width:60.0%" /></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Link to Tableau Dashboard:</strong> <a href="https://public.tableau.com/profile/selenechoong#!/vizhome/ISSS608_DataViz_Makeover_01/Dashboard" class="uri">https://public.tableau.com/profile/selenechoong#!/vizhome/ISSS608_DataViz_Makeover_01/Dashboard</a></p>
 <h1 id="major-observations">4.0 Major Observations</h1>
 <p><strong>Observation 1:</strong> <br> Between 2009 to 2019, share of the middle-aged residents (aged 25 - 54) among the resident labour force has declined (75.3% in 2009 to 67.4% in 2019), despite the increase in Labour Force Participation Rate (LFPR) among these middle-aged residents.</p>
