@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/kePrint-0.0.1/kePrint.js","dataviz-makeover-1_files/lightable-0.0.1/lightable.css","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/Fig1_ExistingViz.png"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/kePrint-0.0.1/kePrint.js","dataviz-makeover-1_files/lightable-0.0.1/lightable.css","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/Fig1_ExistingViz.png","images/Fig2_Sketch.jpg","images/Obs1_MiddleAged.jpg","images/Obs2_LFPR.jpg","images/Obs3_20-24.jpg","images/Obs4_distribution.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2099,76 +2099,114 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
-<h1 id="critiques-of-data-visualisation">1.0 Critiques of data visualisation</h1>
+<h1 id="critiques-of-existing-visualisation-with-suggested-improvements">1.0 Critiques of Existing Visualisation with Suggested Improvements</h1>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/Fig1_ExistingViz.png" width="634" /></p>
 </div>
 <h3 id="clarity">Clarity</h3>
 <table>
 <colgroup>
-<col style="width: 3%" />
-<col style="width: 96%" />
+<col style="width: 4%" />
+<col style="width: 47%" />
+<col style="width: 47%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">S/N</th>
 <th style="text-align: left;">Comments</th>
+<th style="text-align: left;">Suggested Improvement</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">Lead-in paragraph is informative and discusses about both the change in the Labour Force Participation Rate (LFPR) and in the share of the resident labour force by age groups from 2009 to 2019. However, the current chart only shows the share of the resident labour force by age groups. No data is shown to depict the change in the LFPR, which might confuse the readers on the data being referenced in the analysis.</td>
+<td style="text-align: left;">Include another additional chart that shows the corresponding LFPR by age bands for 2009 and 2019</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">Lead-in paragraph cites the percentages as the sum of broader age bands (e.g. aged 25 to 54 instead of the 5-year age band of 25-29, 30-34 to 50-54) making it difficult for the readers to relate the figures with the chart directly.</td>
+<td style="text-align: left;">Annotate within the chart the total percentages across the age bands that were being mentioned in the lead-in paragraph so that readers can easily identify how the percentages cited were derived</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">Title of the existing chart might be confusing as “Resident labour force by age” might be interpreted as the actual number of residents that are in the labour force for each age band but the current unit for the chart is in percent.</td>
+<td style="text-align: left;">Revise the chart title to “Share of Resident Labour Force by Age” to reflect that the figures shown are percentages and total across all age groups will sum to 100%</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
 <td style="text-align: left;">Data are being represented in age bands on the x-axis. Using line chart makes it difficult for readers to identify the corresponding points for age group on the x-axis. Also, the use of line chart might mislead the reader to interpret the data as being time-series data. Line charts are not advisable to be used for comparison of categorical data.</td>
+<td style="text-align: left;">Revise the chart to represent each age band as a bar chart (horizontal/ vertical) to clearly show that age is being charted as discrete categorical bands instead of continuous age value</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">While having the reference line for the median age is useful for comparing between the 2 years, charting it on the x-axis which is shown in terms of age bands is confusing.</td>
+<td style="text-align: left;">Keep the median age comparison but as a separate chart instead of reference levels</td>
 </tr>
 </tbody>
 </table>
 <h3 id="aesthetics">Aesthetics</h3>
 <table>
 <colgroup>
-<col style="width: 3%" />
-<col style="width: 96%" />
+<col style="width: 4%" />
+<col style="width: 47%" />
+<col style="width: 47%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">S/N</th>
 <th style="text-align: left;">Comments</th>
+<th style="text-align: left;">Suggested Improvement</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">6</td>
 <td style="text-align: left;">Choice of font, font size and layout is generally clear with the title of the chart at the top left corner of the chart. Labels on x-axis are clearly displayed horizontally.</td>
+<td style="text-align: left;">Can keep to the existing font, font size and layout</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">7</td>
 <td style="text-align: left;">The use of colour coding (grey for 2009 and blue for 2019) helps readers to easily distinguish the data between the 2 years. The more recent year of 2019 also stands out since the blue colour used is brighter.</td>
+<td style="text-align: left;">Two distinct colours can still be used for each year to distinguish between them</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3</td>
+<td style="text-align: center;">8</td>
 <td style="text-align: left;">There is currently no y-axis and no indication of the data units being shown in the line chart. It might not be clear to the readers what data are being represented by the 2 lines in the chart.</td>
+<td style="text-align: left;">Add the necessary labelling for the axis to allow readers to clearly identify the data that is being charted</td>
 </tr>
 </tbody>
 </table>
-<h1 id="ways-to-improve-current-design">2.0 Ways to improve current design</h1>
-<h1 id="proposed-data-visualisation">3.0 Proposed data visualisation</h1>
-<h1 id="step-by-step-description-on-preparation">4.0 Step-by-step description on preparation</h1>
-<h1 id="major-observations-revealed">5.0 Major observations revealed</h1>
+<h1 id="ways-to-improve-current-visualisation">2.0 Ways to Improve Current Visualisation</h1>
+<h3 id="sketch-of-proposed-design">Sketch of Proposed Design</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Fig2_Sketch.jpg" /><!-- --></p>
+</div>
+<ul>
+<li>The usage of bar charts instead of line charts can better represent the data which was grouped into categorical age bands. Presentation of the data in sequential age bands of around 5 years was kept which allows readers to see the differences across the age groups on a more detailed level.</li>
+<li>Addition of the chart on the Labour Force Participation Rate (LFPR) as well as the netted percentages across age bands allows for consistency in the information described in the lead-in paragraph and the charts, where readers can easily identify the source of the data in the visualisation.</li>
+<li>Having the two charts with the corresponding age bands side-by-side allows the readers to easily see how the share and the LFPR has changed for each age band and compare across the age bands.</li>
+<li>Separating the median age from the chart also prevents confusion since the age data was not being shown as a continuous variable.</li>
+</ul>
+<h1 id="step-by-step-description-on-preparation">3.0 Step-by-step Description on Preparation</h1>
+<p><strong>Link to Tableau Dashboard:</strong> <a href="https://public.tableau.com/profile/selenechoong#!/vizhome/ISSS608_DataViz_Makeover_01/Dashboard" class="uri">https://public.tableau.com/profile/selenechoong#!/vizhome/ISSS608_DataViz_Makeover_01/Dashboard</a></p>
+<h1 id="major-observations">4.0 Major Observations</h1>
+<p><strong>Observation 1:</strong> <br> Between 2009 to 2019, share of the middle-aged residents (aged 25 - 54) among the resident labour force has declined (75.3% in 2009 to 67.4% in 2019), despite the increase in Labour Force Participation Rate (LFPR) among these middle-aged residents.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Obs1_MiddleAged.jpg" width="70%" /></p>
+</div>
+<p><strong>Observation 2:</strong> <br> While LFPR remained lower among older residents (aged 55 &amp; over) as compared to the middle-aged residents (aged 25 - 54) in 2019, there was a larger increase in LFPR observed among these older residents between 2009 to 2019, particularly among those aged 60 to 69 with more than 10% point increase.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Obs2_LFPR.jpg" width="70%" /></p>
+</div>
+<p><strong>Observation 3:</strong> <br> All age bands experienced a rise in the LFPR between 2009 to 2019, except for residents aged 20 to 24 where LFPR has declined from 63.5% to 61.0%.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Obs3_20-24.jpg" width="70%" /></p>
+</div>
+<p><strong>Observation 4:</strong> <br> Distribution of the resident labour force used to be more right skewed in 2009 (i.e. younger labour force) as compared to 2019, where the distribution of the resident labour force appears to be more symmetric. This is further supported by the increase in median age of the residents in the labour force.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Obs4_distribution.jpg" width="70%" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
