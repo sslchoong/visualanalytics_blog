@@ -4,7 +4,7 @@ description: |
   A makeover of the data visualisation on Resident Labour Force. The original data visualisation can be found on Page 22 of Report: Labour Force in Singapore 2019 (https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx).
 author:
   - name: Selene Choong
-    url: https://example.com/norajones
+    url: https://www.linkedin.com/in/selenechoong/
 date: 01-26-2021
 output:
   distill::distill_article:
