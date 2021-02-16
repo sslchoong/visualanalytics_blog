@@ -64,11 +64,11 @@ knitr::include_graphics("images/Fig2_Sketch.jpg")
 
 Data used for this visualisation can be downloaded from [Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub](https://github.com/YouGov-Data/covid-19-tracker). While the entire data hosted on Github contains survey results for 30 countries, only the datasets for the following 14 countries were used: Australia, Canada, Denmark, Finland, France, Germany, Italy, Japan, Netherlands, Norway, Singapore, South Korea, Sweden and United Kingdom.
 
-## 3.2 Data Preparation (Excel File and Tableau)
+## 3.2 Data Preparation
 
 ### Data Inspection of the Data Files for 14 Countries
 
-- Inspecting the data showed that there are numerous other field columns that were not applicable for the research, as well as data rows that were out of the Jan 2021 timeframe of interest
+- Inspecting the data showed that there are numerous other field columns that were not applicable for the research, as well as data rows that were out of the Jan 2021 timeframe of interest <br>
 ![](images/1.1.jpg){width=100%}
 - The codebook also showed that all the datasets have the same variable fields (i.e. same header)
 
@@ -76,8 +76,8 @@ Data used for this visualisation can be downloaded from [Imperial College London
 
 - Launch Tableau. Under Connect to a File, click Text File <br>
 ![](images/2.1.png){width=30%}
-- Navigate to the file directory where the data is saved. Select the one of the country data files (e.g. australia) <br>
--	Remove the Logical Table of Australia from the Data Source Selection pane
+- Navigate to the file directory where the data is saved. Select the one of the country data files (e.g. australia)
+-	Remove the Logical Table of Australia from the Data Source Selection pane <br>
 ![](images/2.2.png){width=100%}
 - Double click on New Union under the Files pane on the left <br>
 ![](images/2.3.png){width=30%}
@@ -91,7 +91,7 @@ Data used for this visualisation can be downloaded from [Imperial College London
 - Drag the dimensions and measures for all the data fields of interest (vac_1, vac2_1, vac2_2, vac2_3, vac2_6, vac_3, gender, age, household_size, household_children, employment_status) as well as country (i.e. Table Name) under the rows <br>
 ![](images/3.2.png){width=100%}
 
-- Drag [RecordNo] under Detail of the All Marks Pane to keep the data at the individual respondent record level <br
+- Drag [RecordNo] under Detail of the All Marks Pane to keep the data at the individual respondent record level <br>
 ![](images/3.3.png){width=30%}
 - Drag endtime under Filters and select range of dates, then indicate 1 Jan 2021 12AM as the start date and 31 Jan 2021 11.59PM as the end date to only keep data in Jan 2021 <br>
 ![](images/3.4.png){width=100%}

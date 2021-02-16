@@ -1578,17 +1578,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="step-by-step-description-on-preparation">3.0 Step-by-step Description on Preparation</h1>
 <h2 id="data-source">3.1 Data Source</h2>
 <p>Data used for this visualisation can be downloaded from <a href="https://github.com/YouGov-Data/covid-19-tracker">Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub</a>. While the entire data hosted on Github contains survey results for 30 countries, only the datasets for the following 14 countries were used: Australia, Canada, Denmark, Finland, France, Germany, Italy, Japan, Netherlands, Norway, Singapore, South Korea, Sweden and United Kingdom.</p>
-<h2 id="data-preparation-excel-file-and-tableau">3.2 Data Preparation (Excel File and Tableau)</h2>
+<h2 id="data-preparation">3.2 Data Preparation</h2>
 <h3 id="data-inspection-of-the-data-files-for-14-countries">Data Inspection of the Data Files for 14 Countries</h3>
 <ul>
-<li>Inspecting the data showed that there are numerous other field columns that were not applicable for the research, as well as data rows that were out of the Jan 2021 timeframe of interest <img src="images/1.1.JPG" style="width:100.0%" /></li>
+<li>Inspecting the data showed that there are numerous other field columns that were not applicable for the research, as well as data rows that were out of the Jan 2021 timeframe of interest <br> <img src="images/1.1.JPG" style="width:100.0%" /></li>
 <li>The codebook also showed that all the datasets have the same variable fields (i.e. same header)</li>
 </ul>
 <h3 id="concatenating-multiple-datasets-in-tableau">Concatenating Multiple Datasets in Tableau</h3>
 <ul>
 <li>Launch Tableau. Under Connect to a File, click Text File <br> <img src="images/2.1.png" style="width:30.0%" /></li>
-<li>Navigate to the file directory where the data is saved. Select the one of the country data files (e.g. australia) <br></li>
-<li>Remove the Logical Table of Australia from the Data Source Selection pane <img src="images/2.2.png" style="width:100.0%" /></li>
+<li>Navigate to the file directory where the data is saved. Select the one of the country data files (e.g. australia)</li>
+<li>Remove the Logical Table of Australia from the Data Source Selection pane <br> <img src="images/2.2.png" style="width:100.0%" /></li>
 <li>Double click on New Union under the Files pane on the left <br> <img src="images/2.3.png" style="width:30.0%" /></li>
 <li>In the popup “Union” window, drag in the datasets for all 14 countries from the left pane and click OK to merge rows from all datasets into one <br> <img src="images/2.4.png" style="width:50.0%" /></li>
 </ul>
@@ -1596,7 +1596,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><p>Click on Sheet 1 to add a new worksheet <br> <img src="images/3.1.png" style="width:40.0%" /></p></li>
 <li><p>Drag the dimensions and measures for all the data fields of interest (vac_1, vac2_1, vac2_2, vac2_3, vac2_6, vac_3, gender, age, household_size, household_children, employment_status) as well as country (i.e. Table Name) under the rows <br> <img src="images/3.2.png" style="width:100.0%" /></p></li>
-<li><p>Drag [RecordNo] under Detail of the All Marks Pane to keep the data at the individual respondent record level &lt;br <img src="images/3.3.png" style="width:30.0%" /></p></li>
+<li><p>Drag [RecordNo] under Detail of the All Marks Pane to keep the data at the individual respondent record level <br> <img src="images/3.3.png" style="width:30.0%" /></p></li>
 <li><p>Drag endtime under Filters and select range of dates, then indicate 1 Jan 2021 12AM as the start date and 31 Jan 2021 11.59PM as the end date to only keep data in Jan 2021 <br> <img src="images/3.4.png" style="width:100.0%" /></p></li>
 <li><p>Click Analysis &gt; View Data. In the popup “View Data” window, click the Export All button to save this filtered set of data as a new file (saved as consolidated_jan21 in this case) <br> <img src="images/3.5.png" style="width:80.0%" /></p></li>
 <li><p>Close the current Tableau session</p></li>
