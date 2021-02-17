@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js","images/1.1.JPG","images/2.1.png","images/2.2.png","images/2.3.png","images/2.4.png","images/3.1.png","images/3.2.png","images/3.3.png","images/3.4.png","images/3.5.png","images/Fig1_ExistingViz.png","images/Fig2_Sketch.jpg"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js","images/1.1.JPG","images/2.1.png","images/2.2.png","images/2.3.png","images/2.4.png","images/3.1.png","images/3.2.png","images/3.3.png","images/3.4.png","images/3.5.png","images/4.1.png","images/4.2.png","images/5.1.png","images/6.1.png","images/6.2.png","images/6.3.png","images/7.1.PNG","images/7.10.png","images/7.11.png","images/7.12.png","images/7.13.png","images/7.14.PNG","images/7.15.PNG","images/7.16.PNG","images/7.2.PNG","images/7.3.png","images/7.4.png","images/7.5.png","images/7.6.png","images/7.7.png","images/7.8.png","images/7.9.PNG","images/Fig1_ExistingViz.png","images/Fig2_Sketch.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2204,7 +2204,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="data-inspection-of-the-data-files-for-14-countries">Data Inspection of the Data Files for 14 Countries</h3>
 <ul>
 <li>Inspecting the data showed that there are numerous other field columns that were not applicable for the research, as well as data rows that were out of the Jan 2021 timeframe of interest <br> <img src="images/1.1.JPG" style="width:100.0%" /></li>
-<li>The codebook also showed that all the datasets have the same variable fields (i.e. same header)</li>
+<li>The codebook showed that all the datasets have the same variable fields (i.e. same header)</li>
+<li>There were some observed inconsistencies in the coding for some variables (e.g.  )</li>
 </ul>
 <h3 id="concatenating-multiple-datasets-in-tableau">Concatenating Multiple Datasets in Tableau</h3>
 <ul>
@@ -2217,9 +2218,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="filtering-master-data-to-keep-relevant-data">Filtering Master Data to Keep Relevant Data</h3>
 <ul>
 <li><p>Click on Sheet 1 to add a new worksheet <br> <img src="images/3.1.png" style="width:40.0%" /></p></li>
-<li><p>Drag the dimensions and measures for all the data fields of interest (vac_1, vac2_1, vac2_2, vac2_3, vac2_6, vac_3, gender, age, household_size, household_children, employment_status) as well as country (i.e. Table Name) under the rows <br> <img src="images/3.2.png" style="width:100.0%" /></p></li>
+<li><p>Drag the dimensions and measures for all the data fields of interest (Vac 1, Vac2_1, Vac2_2, Vac2_3, Vac2_6, Vac_3, Gender, Age, Household Size, Household Children, Employment Status) as well as country (i.e. Table Name) under the rows. For employment status, include all the relevant dimensions i.e. Employment Status, Employment Status 1, Employment Status 2 etc. <br> <img src="images/3.2.png" style="width:100.0%" /></p></li>
 <li><p>Drag [RecordNo] under Detail of the All Marks Pane to keep the data at the individual respondent record level <br> <img src="images/3.3.png" style="width:30.0%" /></p></li>
-<li><p>Drag endtime under Filters and select range of dates, then indicate 1 Jan 2021 12AM as the start date and 31 Jan 2021 11.59PM as the end date to only keep data in Jan 2021 <br> <img src="images/3.4.png" style="width:100.0%" /></p></li>
+<li><p>Drag endtime under Filters cart and select range of dates, then indicate 1 Jan 2021 12AM as the start date and 31 Jan 2021 11.59PM as the end date to only keep data in Jan 2021 <br> <img src="images/3.4.png" style="width:100.0%" /></p></li>
 <li><p>Click Analysis &gt; View Data. In the popup “View Data” window, click the Export All button to save this filtered set of data as a new file (saved as consolidated_jan21 in this case) <br> <img src="images/3.5.png" style="width:80.0%" /></p></li>
 <li><p>Close the current Tableau session</p></li>
 </ul>
@@ -2228,6 +2229,149 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Launch a new Tableau session. Navigate to the directory on computer drive with the file “consolidated_jan2021” and drag the file into Tableau to connect the data<br />
 </li>
 <li>Click on Sheet 1 to add a new worksheet <br> <img src="images/3.1.png" style="width:40.0%" /></li>
+<li>Several new fields will be created to tidy up the existing data format. To create new field, click Analysis &gt; Create Calculated Field. Rename the new field with text under “Field Name” column and input the formula under “Formula” column and click OK. Repeat this step for each of the new fields listed in the table below</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 10%" />
+<col style="width: 46%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">S/N</th>
+<th style="text-align: left;">Field Name</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Country</td>
+<td style="text-align: left;"><strong>REPLACE(REPLACE([Table Name], “.csv”, "“),”-“,” ")</strong></td>
+<td style="text-align: left;">Remove the file extension and replace hyphens with space in the Table Name field which contains the country labels</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Country Format</td>
+<td style="text-align: left;"><strong>TRIM(UPPER(LEFT(SPLIT([Country], " “, 1), 1)) + MID(SPLIT([Country],” “, 1), 2) +” " + UPPER(LEFT(SPLIT([Country], " “, 2), 1)) + MID(SPLIT([Country],” ", 2), 2))</strong></td>
+<td style="text-align: left;">Proper case the country names i.e. capitalise the first letter of each word</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Age Band</td>
+<td style="text-align: left;"><strong>IF [Age] &lt;= 29 THEN “18 - 29” <br> ELSEIF [Age] &lt;= 39 THEN “30 - 39” <br> ELSEIF [Age] &lt;= 49 THEN “40 - 49” <br> ELSEIF [Age] &lt;= 59 THEN “50 - 59” <br> ELSEIF [Age] &gt;= 69 THEN “69 and above” <br> END </strong></td>
+<td style="text-align: left;">Create age bands for comparison</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Employment Status Format</td>
+<td style="text-align: left;"><strong>IF [Employment Status 1] = “Yes” THEN “Full time employment” <br> ELSEIF [Employment Status 2] = “Yes” THEN “Part time employment” <br> ELSEIF [Employment Status 3] = “Yes” THEN “Full time student” <br> ELSEIF [Employment Status 4] = “Yes” THEN “Retired” <br> ELSEIF [Employment Status 5] = “Yes” THEN “Unemployed” <br> ELSEIF [Employment Status 6] = “Yes” THEN “Not working” <br> ELSEIF [Employment Status 7] = “Yes” THEN “Other” <br> ELSE [Employment Status] END </strong></td>
+<td style="text-align: left;">Standardise format and recode all employment status into 1 consolidated field</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Toggle to the pill of [Household Size] under the left Tables pane and click on the dropdown button to the right of the pill. Select Convert to Dimension as aliases can only be added for categorical data <br> <img src="images/4.1.png" style="width:50.0%" /> <br></li>
+<li>Toggle back to the pill of [Household Size] and click on the dropdown button again. Select Aliases. Type the recoded labels for the options “8” as “8 or more” and Null as “Undisclosed” under the “Value (Alias)” column and click OK <br> <img src="images/4.2.png" style="width:60.0%" /> <br></li>
+<li>As the data under the field of [Household Children] does not match with the codebook making it difficult to determine if the data captured are absolute quantitative responses or codes of qualitative responses, the field will not be used for subsequent visualisation steps</li>
+</ul>
+<h2 id="creating-diverging-stacked-bar-chart">3.3 Creating Diverging Stacked Bar Chart</h2>
+<h3 id="pivoting-data-into-required-format">Pivoting Data into Required Format</h3>
+<ul>
+<li><p>On Data Source tab, select the columns of the 6 data fields (Vac 1, Vac2_1, Vac2_2, Vac2_3, Vac2_6, Vac_3). Toggle to the top right of one of the selected column and click on the dropdown button. Select Pivot <br> <img src="images/5.1.png" style="width:60.0%" /> <br></p></li>
+<li><p>Scroll to the pivoted resulting columns. Rename [Pivot Field Names] to “Question Code” and [Pivot Field Values] to “Question Response”</p></li>
+</ul>
+<h3 id="creating-the-required-fields">Creating the Required Fields</h3>
+<ul>
+<li><p>Click on Sheet 1 to add a new worksheet <br> <img src="images/6.1.png" style="width:40.0%" /> <br></p></li>
+<li><p>Toggle to the pill of [Question Response] under the left Tables pane and click on the dropdown button to the right of the pill. Select Aliases <br> <img src="images/6.2.png" style="width:50.0%" /> <br> Type the textual labels for the options under the “Value (Alias)” column and click OK. This helps to add proper text labels to the fields for display in the visulisation <br> <img src="images/6.3.png" style="width:60.0%" /> <br></p></li>
+<li><p>Several new calculated fields will be created for generating the diverging stacked bar chart. To create new field, click Analysis &gt; Create Calculated Field. Rename the new field with text under “Field Name” column and input the formula under “Formula” column and click OK. Repeat this step for each of the new fields listed in the table below</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 14%" />
+<col style="width: 44%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">S/N</th>
+<th style="text-align: left;">Field Name</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Number of Records</td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Create an artificial column on the count for ease of tabulation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Total Count</td>
+<td style="text-align: left;"><strong>TOTAL(SUM([Number of Records]))</strong></td>
+<td style="text-align: left;">Create a total variable as the base</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Count Negative</td>
+<td style="text-align: left;"><strong>IF [Question Response] = “5 – Strongly disagree” OR [Question Response] = “4” THEN 1 <br> ELSEIF [Question Response] = “3” THEN 0.5 <br> ELSE 0 END</strong></td>
+<td style="text-align: left;">Calibrate the diverging scale</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Total Count Negative</td>
+<td style="text-align: left;"><strong>TOTAL(SUM([Count Negative]))</strong></td>
+<td style="text-align: left;">Create a total negative variable for generating starting point</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Percentage</td>
+<td style="text-align: left;"><strong>SUM([Number of Records])/ [Total Count]</strong></td>
+<td style="text-align: left;">Compute the percentages</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Gantt Start</td>
+<td style="text-align: left;"><strong>-[Total Count Negative]/ [Total Count]</strong></td>
+<td style="text-align: left;">Create a starting point for the gantt chart</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Gantt Percentage</td>
+<td style="text-align: left;"><strong>PREVIOUS_VALUE([Gantt Start]) + ZN(LOOKUP([Percentage], -1))</strong></td>
+<td style="text-align: left;">Create the percent for the gantt chart</td>
+</tr>
+</tbody>
+</table>
+<h3 id="generating-the-chart">Generating the Chart</h3>
+<ul>
+<li>From the left Tables pane, drag [Country Format] to Rows and [Gantt Percentage] under Columns <br> <img src="images/7.1.PNG" style="width:50.0%" /> <br></li>
+<li>Drag [Question Response] from the left Tables pane to Detail under the Marks cart <br> <img src="images/7.2.PNG" style="width:50.0%" /> <br></li>
+<li>Toggle to [Gantt Percentage] under Columns and click on the dropdown button to the right of the pill. Select Compute Using &gt; Question Response <br> <img src="images/7.3.png" style="width:50.0%" /> <br></li>
+<li>Drag [Question Response] from the left Tables pane to Color under the Marks cart <br> <img src="images/7.4.png" style="width:50.0%" /> <br></li>
+<li>Under the Marks cart, click on the dropdown button and change the marks type to Gantt Bar <br> <img src="images/7.5.png" style="width:30.0%" /> <br></li>
+<li>Drag [Percentage] from the left Tables pane to Size under the Marks cart <br> <img src="images/7.6.png" style="width:50.0%" /> <br></li>
+<li>Click on the dropdown button at the top right of the Legend of [Question Response] and select Sort. Under Sort By, select Manual from the list. Sort the labels using the arrows at the right into the order of Strongly disagree, Disagree, Neutral, Agree and Strongly agree <br> <img src="images/7.7.png" style="width:40.0%" /> <br></li>
+<li>Under the left Tables pane, right-click [Question Code], and select Create &gt; Set <br> <img src="images/7.8.png" style="width:50.0%" /> <br></li>
+<li>Under the popup “Create Set” window, check all options that should appear in the final filter card (i.e. Vac 1 and Vac 3). Rename the Set as Timeframe. Click OK <br> <img src="images/7.9.PNG" style="width:50.0%" /> <br></li>
+<li>Drag [Timeframe] to the Filter shelf <br> <img src="images/7.10.png" style="width:50.0%" /> <br></li>
+<li>Toggle to [Timeframe] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter <br> <img src="images/7.11.png" style="width:30.0%" /> <br></li>
+<li>Click on the dropdown button at the top right of the Timeframe Filter. Select Single Value (list) <br> <img src="images/7.12.png" style="width:30.0%" /> <br></li>
+<li>Toggle to the pill of [Question Code] under the left Tables pane and click on the dropdown button to the right of the pill. Select Aliases <br> <img src="images/7.13.png" style="width:50.0%" /> <br></li>
+<li>Type the question labels for “Vac 1” as “This Week” and “Vac 3” as “A Year from Now” under the “Value (Alias)” column and click OK <br> <img src="images/7.14.PNG" style="width:50.0%" /> <br></li>
+<li>Click on the dropdown button at the top right of the Question Response Legend. Select Edit Colors. Change the colours of each category. The following colours were used for this dashboard: <br> <em>Strongly disagree – #aa0000; Disagree – #f5715d; Neutral – #b3b7b8; Agree – #92c0df; Strongly agree – #4e79a7</em> <br> <img src="images/7.15.PNG" style="width:60.0%" /> <br></li>
+<li>Click on the dropdown button at the top right of the Question Response Legend once more. Select Edit Title and change it to “Level of Agreement”</li>
+<li>Right click on the x-axis and select Add Reference Line</li>
+<li>In the popup “Edit Reference Line, Band or Box” window, change the value to Constant and indicate 0. Change the label to None and make the preferred formatting for Line <br> <img src="images/7.16.PNG" style="width:50.0%" /> <br></li>
+<li>Right click on the x-axis again and untick Show Header to hide the x-axis</li>
+<li>Right click on the Sheet 1 tab on the bottom bar and select Rename. Rename the sheet to Diverging Chart</li>
 </ul>
 <h1 id="final-data-visualisation-output">4.0 Final Data Visualisation Output</h1>
 <div class="layout-chunk" data-layout="l-body-outset">
