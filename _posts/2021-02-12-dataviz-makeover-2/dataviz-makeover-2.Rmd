@@ -112,13 +112,10 @@ Data used for this visualisation can be downloaded from [Imperial College London
 |:-:| :----- | :-------------------------- | :--------------------- |
 | 1 | Country | **REPLACE(REPLACE([Table Name], ".csv", ""), "-", " ")** | Remove the file extension and replace hyphens with space in the Table Name field which contains the country labels |
 | 2 | Country Format | **TRIM(UPPER(LEFT(SPLIT([Country], " ", 1), 1)) + MID(SPLIT([Country], " ", 1), 2) + " " + UPPER(LEFT(SPLIT([Country], " ", 2), 1)) + MID(SPLIT([Country], " ", 2), 2))** | Proper case the country names i.e. capitalise the first letter of each word |
-| 3 | Age Band | **IF [Age] <= 29 THEN "18 - 29" <br> ELSEIF [Age] <= 39 THEN "30 - 39" <br> ELSEIF [Age] <= 49 THEN "40 - 49" <br> ELSEIF [Age] <= 59 THEN "50 - 59" <br> ELSEIF [Age] >= 69 THEN "69 and above" <br> END **| Create age bands for comparison |
-| 4 | Employment Status Format | **IF [Employment Status 1] = "Yes" THEN "Full time employment" <br> ELSEIF [Employment Status 2] = "Yes" THEN "Part time employment" <br> ELSEIF [Employment Status 3] = "Yes" THEN "Full time student" <br> ELSEIF [Employment Status 4] = "Yes" THEN "Retired" <br> ELSEIF [Employment Status 5] = "Yes" THEN "Unemployed" <br> ELSEIF [Employment Status 6] = "Yes" THEN "Not working" <br> ELSEIF [Employment Status 7] = "Yes" THEN "Other" <br> ELSE [Employment Status] END ** | Standardise format and recode all employment status into 1 consolidated field |
+| 3 | Age Band | **IF [Age] <= 29 THEN "18 - 29" <br> ELSEIF [Age] <= 39 THEN "30 - 39" <br> ELSEIF [Age] <= 49 THEN "40 - 49" <br> ELSEIF [Age] <= 59 THEN "50 - 59" <br> ELSEIF [Age] <= 69 THEN "60 - 69" <br> ELSEIF [Age] > 69 THEN "70 and above" <br> END **| Create age bands for comparison |
+| 4 | Household Size | **IF [Household Size] = 1 THEN "1 pax" <br> ELSEIF [Household Size] = 4 THEN "2 - 4 paxes" <br> ELSEIF [Household Size] <= 7 THEN "5 - 7 paxes" <br> ELSEIF [Household Size] = 8 THEN "8 or more paxes" <br> ELSEIF [Household Size] = 9 THEN "Don't know" <br> ELSEIF [Household Size] = 10 THEN "Prefer not to say" <br> ELSE "Not answered" END **| Create household size bands for comparison |
+| 5 | Employment Status Format | **IF [Employment Status 1] = "Yes" THEN "Full time employment" <br> ELSEIF [Employment Status 2] = "Yes" THEN "Part time employment" <br> ELSEIF [Employment Status 3] = "Yes" THEN "Full time student" <br> ELSEIF [Employment Status 4] = "Yes" THEN "Retired" <br> ELSEIF [Employment Status 5] = "Yes" THEN "Unemployed" <br> ELSEIF [Employment Status 6] = "Yes" THEN "Not working" <br> ELSEIF [Employment Status 7] = "Yes" THEN "Other" <br> ELSE [Employment Status] END ** | Standardise format and recode all employment status into 1 consolidated field |
 
-- Toggle to the pill of [Household Size] under the left Data pane and click on the dropdown button to the right of the pill. Select Convert to Dimension as aliases can only be added for categorical data <br>
-![](images/4.1.png){width=50%} <br>
-- Toggle back to the pill of [Household Size] and click on the dropdown button again. Select Aliases. Type the recoded labels for the options “8” as “8 or more” and Null as “Undisclosed” under the “Value (Alias)” column and click OK <br>
-![](images/4.2.png){width=60%} <br>
 - As the data under the field of [Household Children] does not match with the codebook making it difficult to determine if the data captured are absolute quantitative responses or codes of qualitative responses, the field will not be used for subsequent visualisation steps
 
 ## 3.3 Creating Diverging Stacked Bar Chart
@@ -191,13 +188,15 @@ Type the textual labels for the options under the “Value (Alias)” column and
 -	Right click on the x-axis again and untick Show Header to hide the x-axis
 - Right click within the area of the chart and select Format. Click on the Lines button (fifth button on at the top). Under Rows tab, click on Grid Lines and format to own preference to show the horizontal lines. Under Columns tab, click None for Grid Lines <br>
 ![](images/7.17.png){width=30%} <br>
+-	Double click on the sheet title and amend it. The following title and formatting was used. Click OK <br>
+![](images/7.18.png){width=50%} <br>
 - Right click on the Sheet 1 tab on the bottom bar and select Rename. Rename the sheet to "Diverging Chart"
 
 ### Creating a Dynamic Sorting Field
 
 - In the left Data pane, click the dropdown button at the top right corner and select Create Parameter <br>
 ![](images/8.1.png){width=30%} <br>
-- In the popup “Create Parameter” window, rename the parameter as “Sort Descending by”. Select String under the Data type and select List under Allowable values. Under the List of values, input the exact response label under Value and the corresponding textual label of Strongly disagree, Disagree, Neutral, Agree and Strongly agree under Display as. Click OK <br>
+- In the popup “Create Parameter” window, rename the parameter as “Sort Descending by”. Select Integer under the Data type and select List under Allowable values. Under the List of values, input the exact response label under Value and the corresponding textual label of Strongly disagree, Disagree, Neutral, Agree and Strongly agree under Display as. Click OK <br>
 ![](images/8.2.png){width=50%} <br>
 - Toggle to the parameter pill of [Sort Descending by] under the left Data pane and click on the dropdown button to the right of the pill. Select Show Parameter <br>
 ![](images/8.3.png){width=30%} <br>
@@ -220,7 +219,7 @@ Type the textual labels for the options under the “Value (Alias)” column and
 
 ### Customising the Tooltip
 
--	Click on Sheet 2 to add a new worksheet
+-	Click on the Add New Worksheet button to the right of “Diverging Chart” worksheet
 -	From the left Data pane, drag [Question Response] to Rows and another [Question Response] under Columns <br>
 ![](images/9.1.png){width=40%} <br>
 -	Toggle to [Question Response] under Columns and click on the dropdown button to the right of the pill. Select Measure > Count <br>
@@ -247,7 +246,108 @@ Type the textual labels for the options under the “Value (Alias)” column and
 ![](images/9.9.png){width=60%} <br>
 -	Navigate back to the “Tooltip” worksheet and resize the chart by hovering along the bottom or right of the chart area until the resize arrow appears
 
+## 3.4 Creating a Dot Plot with Error Bars
 
+### Creating the Required Fields
+
+-	Click on the Add New Worksheet button to the right of “Tooltip” worksheet
+-	Several new calculated fields will be created for plotting the error bars. Click Analysis > Create Calculated Field. Rename the new field with text under "Field Name" column and input the formula under "Formula" column and click OK. Repeat this step for each of the new fields listed in the table below.  Some of the fields created earlier for the diverging chart will be reused
+
+|S/N| Field Name | Formula | Purpose |
+|:-:| :-------- | :-------------------------- | :--------------------- |
+| 1 | Prop_SE | **SQRT(([Percent Strongly Agree]*(1-[Percent Strongly Agree]))/SUM([Number of Records]))** |  Compute the standard error proportion|
+| 2 | Z_95% | **1.959964 ** | Z-value for 95% confidence interval (CI) |
+| 3 | Z_99% | **2.575829** | Z-value for 99% CI |
+| 4 | Prop_Margin of Error 95% | **[Z_95%]*[Prop_SE]** | Compute the margin of error for 95% CI |
+| 5 | Prop_Margin of Error 99% | **[Z_99%]*[Prop_SE]** | Compute the margin of error for 99% CI |
+| 6 | Prop_Lower Limit 95% | **[Percent Strongly Agree] - [Prop_Margin of Error 95%]** | Lower limit of 95% CI |
+| 7 | Prop_Lower Limit 99% | **[Percent Strongly Agree] - [Prop_Margin of Error 99%]** | Lower limit of 99% CI |
+| 8 | Prop_Upper Limit 95% | **[Percent Strongly Agree] + [Prop_Margin of Error 95%]** | Upper limit of 95% CI |
+| 9 | Prop_Upper Limit 99% | **[Percent Strongly Agree] + [Prop_Margin of Error 99%]** | Upper limit of 99% CI |
+
+### Generating the Chart
+
+-	From the left Data pane, drag [Country Format] to Rows and [Percentage Strongly Agree] under Columns <br>
+![](images/10.1.png){width=30%} <br>
+-	Drag [Measure Values] to Columns. Remove the unwanted measures and keep only Prop_Lower Limit 95%, Prop_Lower Limit 99%, Prop_Upper Limit 95% and Prop_Upper Limit 99% <br>
+![](images/10.2.png){width=20%} <br>
+-	Toggle to [Measure Values] under Columns and click on the dropdown button to the right of the pill. Select Dual Axis <br>
+![](images/10.3.png){width=40%} <br>
+-	Right click on the bottom x-axis and select Synchronise Axis
+-	Click on the Measure Value Marks cart and change the Marks type to Line <br>
+![](images/10.4.png){width=30%} <br>
+-	In the Measure Value Marks cart, remove [Measure Names] from Detail. Drag [Measure Names] from the left Data pane to Path and another to Color <br>
+![](images/10.5.png){width=30%} <br>
+-	Click on the dropdown button at the top right of the Measure Names Legend. Select Edit Colors. Change the colours of each category. The following colours were used for this dashboard: <br>
+* Prop_Lower Limit 95% and Prop_Upper Limit 95% – #76b7b2; Prop_Lower Limit 99% and Prop_Upper Limit 99%  – #afd6ed *
+-	Reorganise the order of the dimensions under Columns to show the [Measure Values] before [Percent Strongly Agree] <br>
+![](images/10.7.png){width=30%} <br>
+-	Click on the AGG(Percent Strongly Agree) Marks cart and change the Marks type to Circle. Click on colour to change it to the same colour as the Strongly Agree bar in the diverging stacked bar chart. Adjust the size of the dot to reduce it
+-	Click on the dropdown button at the top right of the Measure Names Legend. Select Sort. In the popup “Sort” window, select Manual under Sort By. Sort the labels using the arrows at the right into the order below. Close the window <br>
+![](images/10.8.png){width=40%} <br>
+-	Right click on the top x-axis and uncheck Show Header
+-	Right click on the bottom x-axis and select Format. Under Axis tab, change the Numbers under Scale section to Percentage with 1 decimal place and Ticks to None <br>
+![](images/10.9.png){width=30%} <br>
+-	Toggle to [Country Format] under Rows and click on the dropdown button to the right of the pill. Select Sort. In the popup “Sort” window, select Nested under Sort By, Descending under Sort Order and Sort Order under Field Name. Keep Aggregation as Custom. Close the window
+-	Right click on the “Country Format” label just above the y-axis and select Hide Field Labels for Rows
+-	Double click on the sheet title and amend it to “% Strongly Agree (95% and 99% Confidence Intervals)”. Click OK <br>
+![](images/10.10.png){width=40%} <br>
+-	Toggle to [AGG(Percent Strongly Agree)] under Columns and click on the dropdown button to the right of the pill. Select Format. Under Pane tab, change the Numbers under Scale section to Percentage with 1 decimal place
+-	Right click on the bottom x-axis and select Edit Axis. In the popup “Edit Axis” window, change the Axis Title to “% respondents”. Close the window <br>
+![](images/10.11.png){width=30%} <br>
+-	Right click on the Sheet 3 tab on the bottom bar and select Rename. Rename the sheet to “Confidence Interval”
+
+## 3.5 Adding Dynamic Parameters
+
+- Navigate back to “Diverging Chart” worksheet
+-	In the left Data pane, click the dropdown button at the top right corner and select Create Parameter
+-	In the popup “Create Parameter” window, rename the parameter as “Segment Selection”. Select String under the Data type and select List under Allowable values. Under the List of values, input the list of contextual fields as below. Click OK <br>
+![](images/11.1.png){width=40%} <br>
+-	Toggle to the parameter pill of [Segment Selection] under the left Data pane and click on the dropdown button to the right of the pill. Select Show Parameter
+-	Click on the dropdown button at the top right of the Segment Selection Parameter. Select Single Value (list) <br>
+![](images/11.2.png){width=30%} <br>
+
+-	Click Analysis > Create Calculated Field. Rename the new field as "Selected" and input the formula below then click OK <br>
+**CASE [Segment Selection] <br>
+WHEN "Overall" THEN  "" <br>
+WHEN "Gender" THEN [Gender] <br>
+WHEN "Age" THEN  [Age Band] <br>
+WHEN "Household Size" THEN [Household Size Band] <br>
+WHEN "Employment Status" THEN [Employment Status Format] <br>
+END **
+-	Drag [Selected] under Filter shelf. In the popup “Filter” window, tick the shown text and select All. Click OK
+-	Toggle to [Selected] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter
+-	Click on the dropdown button at the top right of the Selected Filter. Select Single Value (list)
+
+## 3.6 Creating Similar Charts for Other Fields
+
+### Duplicating the Diverging Stacked Bar Chart
+
+-	Duplicate the “Diverging Chart” worksheet
+-	Remove Timeframe set from the Filters shelf
+-	Under the left Data pane, right-click [Question Code], and select Create > Set
+-	In the popup “Create Set” window, check all options that should appear in the final filter card (i.e. Vac 2_1, Vac 2_2, Vac 2_3 and Vac 2_6). Rename the Set as Other Findings. Click OK  <br>
+![](images/12.1.png){width=40%} <br>
+-	Drag [Other Findings] to the Filter shelf
+-	Toggle to [Other Findings] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter
+-	Click on the dropdown button at the top right of the Other Findings Filter. Select Single Value (dropdown)
+-	Toggle to the pill of [Question Code] under the left Data pane and click on the dropdown button to the right of the pill. Select Aliases
+-	Type the question phrasing for Vac 2_1, Vac 2_2, Vac 2_3 and Vac 2_6 under the “Value (Alias)” column and click OK
+
+| Member | Value (Alias) |
+| :--- | :---------------------- |
+| Vac2_1 | I am worried about getting Covid-19 |
+| Vac2_2 | I am worried about potential side effects of a Covid-19 vaccine |
+| Vac2_3 | I believe government health authorities in my country will provide me with an effective Covid-19 vaccine |
+| Vac2_6 | If I do not get a Covid-19 vaccine when it is available, I will regret it |
+
+-	Double click the sheet title and reset it back to Sheet Name using the Insert button
+-	Right click on the sheet tab on the bottom bar and select Rename. Rename the sheet to “Diverging - Oth”
+
+### Duplicating the Dot Plot with Error Bars
+
+-	Duplicate the “Confidence Interval” worksheet
+-	Right click on the sheet tab on the bottom bar and select Rename. Rename the sheet to “CI - Oth”
 
 
 # 4.0  Final Data Visualisation Output
