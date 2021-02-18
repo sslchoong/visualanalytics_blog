@@ -115,7 +115,7 @@ Data used for this visualisation can be downloaded from [Imperial College London
 | 3 | Age Band | **IF [Age] <= 29 THEN "18 - 29" <br> ELSEIF [Age] <= 39 THEN "30 - 39" <br> ELSEIF [Age] <= 49 THEN "40 - 49" <br> ELSEIF [Age] <= 59 THEN "50 - 59" <br> ELSEIF [Age] >= 69 THEN "69 and above" <br> END **| Create age bands for comparison |
 | 4 | Employment Status Format | **IF [Employment Status 1] = "Yes" THEN "Full time employment" <br> ELSEIF [Employment Status 2] = "Yes" THEN "Part time employment" <br> ELSEIF [Employment Status 3] = "Yes" THEN "Full time student" <br> ELSEIF [Employment Status 4] = "Yes" THEN "Retired" <br> ELSEIF [Employment Status 5] = "Yes" THEN "Unemployed" <br> ELSEIF [Employment Status 6] = "Yes" THEN "Not working" <br> ELSEIF [Employment Status 7] = "Yes" THEN "Other" <br> ELSE [Employment Status] END ** | Standardise format and recode all employment status into 1 consolidated field |
 
-- Toggle to the pill of [Household Size] under the left Tables pane and click on the dropdown button to the right of the pill. Select Convert to Dimension as aliases can only be added for categorical data <br>
+- Toggle to the pill of [Household Size] under the left Data pane and click on the dropdown button to the right of the pill. Select Convert to Dimension as aliases can only be added for categorical data <br>
 ![](images/4.1.png){width=50%} <br>
 - Toggle back to the pill of [Household Size] and click on the dropdown button again. Select Aliases. Type the recoded labels for the options “8” as “8 or more” and Null as “Undisclosed” under the “Value (Alias)” column and click OK <br>
 ![](images/4.2.png){width=60%} <br>
@@ -135,7 +135,7 @@ Data used for this visualisation can be downloaded from [Imperial College London
 -	Click on Sheet 1 to add a new worksheet <br>
 ![](images/6.1.png){width=40%} <br>
 
--	Toggle to the pill of [Question Response] under the left Tables pane and click on the dropdown button to the right of the pill. Select Aliases <br>
+-	Toggle to the pill of [Question Response] under the left Data pane and click on the dropdown button to the right of the pill. Select Aliases <br>
 ![](images/6.2.png){width=50%} <br>
 Type the textual labels for the options under the “Value (Alias)” column and click OK. This helps to add proper text labels to the fields for display in the visulisation <br>
 ![](images/6.3.png){width=60%} <br>
@@ -153,21 +153,21 @@ Type the textual labels for the options under the “Value (Alias)” column and
 
 ### Generating the Chart
 
--	From the left Tables pane, drag [Country Format] to Rows and [Gantt Percentage] under Columns <br>
+-	From the left Data pane, drag [Country Format] to Rows and [Gantt Percentage] under Columns <br>
 ![](images/7.1.png){width=50%} <br>
--	Drag [Question Response] from the left Tables pane to Detail under the Marks cart <br>
+-	Drag [Question Response] from the left Data pane to Detail under the Marks cart <br>
 ![](images/7.2.png){width=50%} <br>
 -	Toggle to [Gantt Percentage] under Columns and click on the dropdown button to the right of the pill. Select Compute Using > Question Response <br>
 ![](images/7.3.png){width=50%} <br>
--	Drag [Question Response] from the left Tables pane to Color under the Marks cart <br>
+-	Drag [Question Response] from the left Data pane to Color under the Marks cart <br>
 ![](images/7.4.png){width=50%} <br>
 -	Under the Marks cart, click on the dropdown button and change the marks type to Gantt Bar <br>
 ![](images/7.5.png){width=30%} <br>
--	Drag [Percentage] from the left Tables pane to Size under the Marks cart <br>
+-	Drag [Percentage] from the left Data pane to Size under the Marks cart <br>
 ![](images/7.6.png){width=50%} <br>
 -	Click on the dropdown button at the top right of the Legend of [Question Response] and select Sort. Under Sort By, select Manual from the list. Sort the labels using the arrows at the right into the order of Strongly disagree, Disagree, Neutral, Agree and Strongly agree <br>
 ![](images/7.7.png){width=40%} <br>
--	Under the left Tables pane, right-click [Question Code], and select Create > Set <br>
+-	Under the left Data pane, right-click [Question Code], and select Create > Set <br>
 ![](images/7.8.png){width=50%} <br>
 -	Under the popup “Create Set” window, check all options that should appear in the final filter card (i.e. Vac 1 and Vac 3). Rename the Set as Timeframe. Click OK <br>
 ![](images/7.9.png){width=50%} <br>
@@ -177,7 +177,7 @@ Type the textual labels for the options under the “Value (Alias)” column and
 ![](images/7.11.png){width=30%} <br>
 -	Click on the dropdown button at the top right of the Timeframe Filter. Select Single Value (list) <br>
 ![](images/7.12.png){width=30%} <br>
--	Toggle to the pill of [Question Code] under the left Tables pane and click on the dropdown button to the right of the pill. Select Aliases <br>
+-	Toggle to the pill of [Question Code] under the left Data pane and click on the dropdown button to the right of the pill. Select Aliases <br>
 ![](images/7.13.png){width=50%} <br>
 - Type the question labels for “Vac 1” as “This Week” and “Vac 3” as “A Year from Now” under the “Value (Alias)” column and click OK <br>
 ![](images/7.14.png){width=50%} <br>
@@ -189,7 +189,63 @@ Type the textual labels for the options under the “Value (Alias)” column and
 -	In the popup “Edit Reference Line, Band or Box” window, change the value to Constant and indicate 0. Change the label to None and make the preferred formatting for Line <br>
 ![](images/7.16.png){width=50%} <br>
 -	Right click on the x-axis again and untick Show Header to hide the x-axis
-- Right click on the Sheet 1 tab on the bottom bar and select Rename. Rename the sheet to Diverging Chart
+- Right click within the area of the chart and select Format. Click on the Lines button (fifth button on at the top). Under Rows tab, click on Grid Lines and format to own preference to show the horizontal lines. Under Columns tab, click None for Grid Lines <br>
+![](images/7.17.png){width=30%} <br>
+- Right click on the Sheet 1 tab on the bottom bar and select Rename. Rename the sheet to "Diverging Chart"
+
+### Creating a Dynamic Sorting Field
+
+- In the left Data pane, click the dropdown button at the top right corner and select Create Parameter <br>
+![](images/8.1.png){width=30%} <br>
+- In the popup “Create Parameter” window, rename the parameter as “Sort Descending by”. Select String under the Data type and select List under Allowable values. Under the List of values, input the exact response label under Value and the corresponding textual label of Strongly disagree, Disagree, Neutral, Agree and Strongly agree under Display as. Click OK <br>
+![](images/8.2.png){width=50%} <br>
+- Toggle to the parameter pill of [Sort Descending by] under the left Data pane and click on the dropdown button to the right of the pill. Select Show Parameter <br>
+![](images/8.3.png){width=30%} <br>
+- Click on the dropdown button at the top right of the Sort Descending by Parameter. Select Single Value (list)
+- Several new calculated fields will be created for dynamic sorting. Click Analysis > Create Calculated Field. Rename the new field with text under "Field Name" column and input the formula under "Formula" column and click OK. Repeat this step for each of the new fields listed in the table below
+
+
+|S/N| Field Name | Formula | Purpose |
+|:-:| :-------- | :-------------------------- | :--------------------- |
+| 1 | Response Value | **IF [Question Response] = "5 – Strongly disagree" THEN 5 <br> ELSEIF [Question Response] = "4" THEN 4 <br> ELSEIF [Question Response] = "3" THEN 3 <br> ELSEIF [Question Response] = "2" THEN 2 <br> ELSEIF [Question Response] = "1 - Strongly agree" THEN 1 END ** | Assign a numeric label for all responses for ease of computation |
+| 2 | Percent Strongly Agree | **SUM(IF [Response Value] = 1 THEN 1 ELSE 0 END) / SUM([Number of Records])** | For counting number of respondents that selected Strongly Agree |
+| 3 | Percent Agree | **SUM(IF [Response Value] <= 2 THEN 1 ELSE 0 END) / SUM([Number of Records])** | For counting number of respondents that selected Agree |
+| 4 | Percent Neutral | **SUM(IF [Response Value] = 3 THEN 1 ELSE 0 END) / SUM([Number of Records])** | For counting number of respondents that selected Neutral |
+| 5 | Percent Disagree | **SUM(IF [Response Value] >= 4 THEN 1 ELSE 0 END) / SUM([Number of Records])** | For counting number of respondents that selected Disagree |
+| 6 | Percent Strongly Disagree | **SUM(IF [Response Value] = 5 THEN 1 ELSE 0 END) / SUM([Number of Records])** | For counting number of respondents that selected Strongly Disagree |
+| 7 | Sort Order | **IF [Sort Descending by] = 1 THEN [Percent Strongly Agree] <br> ELSEIF [Sort Descending by] = 2 THEN [Percent Agree] <br> ELSEIF [Sort Descending by] = 4 THEN [Percent Disagree] <br> ELSEIF [Sort Descending by] = 5 THEN [Percent Strongly Disagree] <br> ELSE [Percent Neutral] END ** | To extract the relevant field based on selection in parameter |
+
+- Toggle to [Country Format] under Rows and click on the dropdown button to the right of the pill. Select Sort. In the popup “Sort” window, select Nested under Sort By, Descending under Sort Order and Sort Order under Field Name. Keep Aggregation as Custom. Close the window <br>
+![](images/8.4.png){width=40%} <br>
+
+### Customising the Tooltip
+
+-	Click on Sheet 2 to add a new worksheet
+-	From the left Data pane, drag [Question Response] to Rows and another [Question Response] under Columns <br>
+![](images/9.1.png){width=40%} <br>
+-	Toggle to [Question Response] under Columns and click on the dropdown button to the right of the pill. Select Measure > Count <br>
+![](images/9.2.png){width=30%} <br>
+-	Drag [Question Response] from the left Data pane to Color under the Marks cart
+-	Drag [Number of Records] from the left Data pane to Label under the Marks cart. Toggle to [Number of Records] under Marks cart and click on the dropdown button to the right of the pill. Select Quick Table Calculation > Percent of Total. This is meant for the percentage label<br>
+![](images/9.3.png){width=40%} <br>
+-	Drag another [Number of Records] from the left Data pane to Label under the Marks cart. This is meant for the count label <br>
+![](images/9.4.png){width=30%} <br>
+-	Click on Label under the Marks cart then the button with 3 dots under Text. Format the label to own preference. In our case, the label was updated to **<% of Total SUM(Number of Records)> (<SUM(Number of Records)>)** and click OK <br>
+![](images/9.5.png){width=30%} <br>
+-	Toggle to [Number of Records] under Marks cart and click on the dropdown button to the right of the pill. Select Format. Under Pane tab, change the Numbers under Default section to Percentage with 1 decimal place <br>
+![](images/9.6.png){width=40%} <br>
+-	Toggle to [Question Response] under Rows and click on the dropdown button to the right of the pill. Select Sort. In the popup “Sort” window, select Manual under Sort By. Sort the labels using the arrows at the right into the order of Strongly Agree, Agree, Neutral, Disagree and Strongly disagree. Close the window <br>
+![](images/9.7.png){width=40%} <br>
+-	Right click within the area of the chart and select Format. Click on the Lines button. Under Sheet tab, click on Grid Lines and select None
+-	Right click on the x-axis and untick Show Header to hide the x-axis
+-	Right click on the “Question Response” label just above the y-axis and select Hide Field Labels for Rows <br>
+![](images/9.8.png){width=30%} <br>
+-	Right click on the Sheet 2 tab on the bottom bar and select Rename. Rename the sheet to “Tooltip”
+-	Navigate back to the “Diverging Chart” worksheet
+-	Click on Tooltip under the Marks cart. Edit the tooltip to keep the relevant content and amend the text where appropriate
+-	Add the Tooltip chart by clicking on the Insert > Sheets > Tooltip. Amend the filter under the chart syntax in Tooltip from filter = “<All Fields>” to filter = “<Country Format>” <br>
+![](images/9.9.png){width=60%} <br>
+-	Navigate back to the “Tooltip” worksheet and resize the chart by hovering along the bottom or right of the chart area until the resize arrow appears
 
 
 
