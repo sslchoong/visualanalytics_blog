@@ -250,11 +250,11 @@ Type the textual labels for the options under the “Value (Alias)” column and
 
 |S/N| Field Name | Formula | Purpose |
 |:-:| :-------- | :-------------------------- | :--------------------- |
-| 1 | Prop_SE | **SQRT(([Percent Strongly Agree]*(1-[Percent Strongly Agree]))/SUM([Number of Records]))** |  Compute the standard error proportion|
+| 1 | Prop_SE | **SQRT(([Percent Strongly Agree]\*(1-[Percent Strongly Agree]))/SUM([Number of Records]))** |  Compute the standard error proportion|
 | 2 | Z_95% | **1.959964 ** | Z-value for 95% confidence interval (CI) |
 | 3 | Z_99% | **2.575829** | Z-value for 99% CI |
-| 4 | Prop_Margin of Error 95% | **[Z_95%]*[Prop_SE]** | Compute the margin of error for 95% CI |
-| 5 | Prop_Margin of Error 99% | **[Z_99%]*[Prop_SE]** | Compute the margin of error for 99% CI |
+| 4 | Prop_Margin of Error 95% | **[Z_95%]\*[Prop_SE]** | Compute the margin of error for 95% CI |
+| 5 | Prop_Margin of Error 99% | **[Z_99%]\*[Prop_SE]** | Compute the margin of error for 99% CI |
 | 6 | Prop_Lower Limit 95% | **[Percent Strongly Agree] - [Prop_Margin of Error 95%]** | Lower limit of 95% CI |
 | 7 | Prop_Lower Limit 99% | **[Percent Strongly Agree] - [Prop_Margin of Error 99%]** | Lower limit of 99% CI |
 | 8 | Prop_Upper Limit 95% | **[Percent Strongly Agree] + [Prop_Margin of Error 95%]** | Upper limit of 95% CI |
@@ -270,13 +270,13 @@ Type the textual labels for the options under the “Value (Alias)” column and
 ![](images/10.3.png){width=40%} <br>
 -	Right click on the bottom x-axis and select Synchronise Axis
 -	Click on the Measure Value Marks cart and change the Marks type to Line <br>
-![](images/10.4.png){width=30%} <br>
+![](images/10.4.png){width=25%} <br>
 -	In the Measure Value Marks cart, remove [Measure Names] from Detail. Drag [Measure Names] from the left Data pane to Path and another to Color <br>
-![](images/10.5.png){width=30%} <br>
+![](images/10.5.png){width=25%} <br>
 -	Click on the dropdown button at the top right of the Measure Names Legend. Select Edit Colors. Change the colours of each category. The following colours were used for this dashboard: <br>
 * Prop_Lower Limit 95% and Prop_Upper Limit 95% – #76b7b2; Prop_Lower Limit 99% and Prop_Upper Limit 99%  – #afd6ed *
 -	Reorganise the order of the dimensions under Columns to show the [Measure Values] before [Percent Strongly Agree] <br>
-![](images/10.7.png){width=30%} <br>
+![](images/10.7.png){width=50%} <br>
 -	Click on the AGG(Percent Strongly Agree) Marks cart and change the Marks type to Circle. Click on colour to change it to the same colour as the Strongly Agree bar in the diverging stacked bar chart. Adjust the size of the dot to reduce it
 -	Click on the dropdown button at the top right of the Measure Names Legend. Select Sort. In the popup “Sort” window, select Manual under Sort By. Sort the labels using the arrows at the right into the order below. Close the window <br>
 ![](images/10.8.png){width=40%} <br>
@@ -403,5 +403,35 @@ knitr::include_graphics("images/Dashboard.png")
 
 # 5.0  Major Observations
 
+**Observation 1:** <br>
+An increase in proportion of respondents expressed stronger willingness to get receive the Covid-19 vaccination when offered in the next one year, as compared to within this week.
 
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs1_ThisWeekvsAYear.png")
+```
+
+**Observation 2:** <br>
+Willingness to receive the Covid-19 vaccination increases with age. Higher proportion of older respondents agreed that they will definitely get the vaccine if made available, as compared to younger respondents. This applies to both the availability of this week and a year from now.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs2_ByAge.png")
+```
+
+**Observation 3:** <br>
+While Japan has the highest proportion of respondents who indicated that they are worried about getting Covid-19 among the 14 countries, it has the lowest proportion of respondents who agreed they they get the Covid-19 vaccination if made available to them this week or even a year from now.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs3_Japan.png")
+```
+
+**Observation 4:** <br>
+Higher willingness of UK and Denmark respondents to receive the Covid-19 vaccination might have been contributed by their perceptions of the vaccination. We observed a similarly higher proportion of respondents from these countries who believed that their government health authorities will provide them with an effective Covid-19 vaccine, as well as a lower proportion of them who are worried about the potential side effects of the vaccine.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs4_UKDenmark.png")
+```
 
