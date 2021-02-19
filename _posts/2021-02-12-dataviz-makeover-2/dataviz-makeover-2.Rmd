@@ -71,8 +71,7 @@ Data used for this visualisation can be downloaded from [Imperial College London
 - Inspecting the data showed that there are numerous other field columns that were not applicable for the research, as well as data rows that were out of the Jan 2021 timeframe of interest <br>
 ![](images/1.1.jpg){width=100%}
 - The codebook showed that all the datasets have the same variable fields (i.e. same header)
-- There were some observed inconsistencies in the coding for some variables (e.g. 
-)
+- There were some observed inconsistencies in the coding for some variables (e.g. Employment Status)
 
 ### Concatenating Multiple Datasets in Tableau
 
@@ -164,20 +163,17 @@ Type the textual labels for the options under the “Value (Alias)” column and
 ![](images/7.6.png){width=50%} <br>
 -	Click on the dropdown button at the top right of the Legend of [Question Response] and select Sort. Under Sort By, select Manual from the list. Sort the labels using the arrows at the right into the order of Strongly disagree, Disagree, Neutral, Agree and Strongly agree <br>
 ![](images/7.7.png){width=40%} <br>
--	Under the left Data pane, right-click [Question Code], and select Create > Set <br>
-![](images/7.8.png){width=50%} <br>
--	Under the popup “Create Set” window, check all options that should appear in the final filter card (i.e. Vac 1 and Vac 3). Rename the Set as Timeframe. Click OK <br>
-![](images/7.9.png){width=50%} <br>
--	Drag [Timeframe] to the Filter shelf <br>
+- In the left Data pane, click the dropdown button at the top right corner and select Create Parameter <br>
+![](images/7.8.png){width=30%} <br>
+- In the popup “Create Parameter” window, rename the parameter as “Timeframe”. Select String under the Data type and select List under Allowable values. Under the List of values, input the details below. Click OK <br>
+![](images/7.9.png){width=40%} <br>
+-	Toggle to the parameter pill of [Timeframe] under the left Data pane and click on the dropdown button to the right of the pill. Select Show Parameter
+-	Click on the dropdown button at the top right of the Sort Descending by Parameter. Select Single Value (list)
+- Drag [Question Code] to the Filter shelf <br>
 ![](images/7.10.png){width=50%} <br>
--	Toggle to [Timeframe] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter <br>
-![](images/7.11.png){width=30%} <br>
--	Click on the dropdown button at the top right of the Timeframe Filter. Select Single Value (list) <br>
-![](images/7.12.png){width=30%} <br>
--	Toggle to the pill of [Question Code] under the left Data pane and click on the dropdown button to the right of the pill. Select Aliases <br>
-![](images/7.13.png){width=50%} <br>
-- Type the question labels for “Vac 1” as “This Week” and “Vac 3” as “A Year from Now” under the “Value (Alias)” column and click OK <br>
-![](images/7.14.png){width=50%} <br>
+- In the popup "Filter" window, toggle to Condition tab and select By formula and input the formula below. Click OK <br>
+  ** [Question Code] = [Parameters].[Timeframe]** <br>
+![](images/7.19.png){width=40%} <br>
 -	Click on the dropdown button at the top right of the Question Response Legend. Select Edit Colors. Change the colours of each category. The following colours were used for this dashboard: <br>
 *Strongly disagree – #aa0000; Disagree – #f5715d; Neutral – #b3b7b8; Agree – #92c0df; Strongly agree – #4e79a7* <br>
 ![](images/7.15.png){width=60%} <br>
@@ -188,8 +184,7 @@ Type the textual labels for the options under the “Value (Alias)” column and
 -	Right click on the x-axis again and untick Show Header to hide the x-axis
 - Right click within the area of the chart and select Format. Click on the Lines button (fifth button on at the top). Under Rows tab, click on Grid Lines and format to own preference to show the horizontal lines. Under Columns tab, click None for Grid Lines <br>
 ![](images/7.17.png){width=30%} <br>
--	Double click on the sheet title and amend it. The following title and formatting was used. Click OK <br>
-![](images/7.18.png){width=50%} <br>
+-	Double click on the sheet title and amend it to "% Respondents by Agreement". Click OK
 - Right click on the Sheet 1 tab on the bottom bar and select Rename. Rename the sheet to "Diverging Chart"
 
 ### Creating a Dynamic Sorting Field
@@ -285,6 +280,8 @@ Type the textual labels for the options under the “Value (Alias)” column and
 -	Click on the AGG(Percent Strongly Agree) Marks cart and change the Marks type to Circle. Click on colour to change it to the same colour as the Strongly Agree bar in the diverging stacked bar chart. Adjust the size of the dot to reduce it
 -	Click on the dropdown button at the top right of the Measure Names Legend. Select Sort. In the popup “Sort” window, select Manual under Sort By. Sort the labels using the arrows at the right into the order below. Close the window <br>
 ![](images/10.8.png){width=40%} <br>
+- From the left Data pane, drag [Question Code] to Filters cart
+- Toggle to the parameter pill of [Timeframe] under the left Data pane and click on the dropdown button to the right of the pill. Select Show Parameter
 -	Right click on the top x-axis and uncheck Show Header
 -	Right click on the bottom x-axis and select Format. Under Axis tab, change the Numbers under Scale section to Percentage with 1 decimal place and Ticks to None <br>
 ![](images/10.9.png){width=30%} <br>
@@ -293,8 +290,8 @@ Type the textual labels for the options under the “Value (Alias)” column and
 -	Double click on the sheet title and amend it to “% Strongly Agree (95% and 99% Confidence Intervals)”. Click OK <br>
 ![](images/10.10.png){width=40%} <br>
 -	Toggle to [AGG(Percent Strongly Agree)] under Columns and click on the dropdown button to the right of the pill. Select Format. Under Pane tab, change the Numbers under Scale section to Percentage with 1 decimal place
--	Right click on the bottom x-axis and select Edit Axis. In the popup “Edit Axis” window, change the Axis Title to “% respondents”. Close the window <br>
-![](images/10.11.png){width=30%} <br>
+-	Right click on the bottom x-axis and select Edit Axis. In the popup “Edit Axis” window, change the Axis Title to “% respondents” and select Range as Fixed and change the range as 0 to 1. Close the window <br>
+![](images/10.12.png){width=30%} <br>
 -	Right click on the Sheet 3 tab on the bottom bar and select Rename. Rename the sheet to “Confidence Interval”
 
 ## 3.5 Adding Dynamic Parameters
@@ -309,7 +306,7 @@ Type the textual labels for the options under the “Value (Alias)” column and
 
 -	Click Analysis > Create Calculated Field. Rename the new field as "Selected" and input the formula below then click OK <br>
 **CASE [Segment Selection] <br>
-WHEN "Overall" THEN  "" <br>
+WHEN "Overall" THEN  "Overall" <br>
 WHEN "Gender" THEN [Gender] <br>
 WHEN "Age" THEN  [Age Band] <br>
 WHEN "Household Size" THEN [Household Size Band] <br>
@@ -326,7 +323,7 @@ END **
 -	Duplicate the “Diverging Chart” worksheet
 -	Remove Timeframe set from the Filters shelf
 -	Under the left Data pane, right-click [Question Code], and select Create > Set
--	In the popup “Create Set” window, check all options that should appear in the final filter card (i.e. Vac 2_1, Vac 2_2, Vac 2_3 and Vac 2_6). Rename the Set as Other Findings. Click OK  <br>
+-	In the popup “Create Set” window, check all options that should appear in the final filter card (i.e. Vac 2_1, Vac 2_2, Vac 2_3 and Vac 2_6). Rename the Set as Other Findings. Click OK <br>
 ![](images/12.1.png){width=40%} <br>
 -	Drag [Other Findings] to the Filter shelf
 -	Toggle to [Other Findings] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter
@@ -349,15 +346,59 @@ END **
 -	Duplicate the “Confidence Interval” worksheet
 -	Right click on the sheet tab on the bottom bar and select Rename. Rename the sheet to “CI - Oth”
 
+## 3.7 Dashboard
+
+- Click on the New Dashboard button on the bottom bar to create a new dashboard sheet <br>
+![](images/13.1.png){width=60%} <br>
+- From the left Dashboard pane, drag [Diverging Chart] under Sheets onto the dashboard sheet. Drag [Confidence Interval] to the right of the [Diverging Chart] between Diverging and the Legend/ Filters <br>
+![](images/13.2.png){width=80%} <br>
+- In the left Dashboard pane, under Size, change it to Automatic <br>
+![](images/13.3.png){width=30%} <br>
+- Drag [Diverging - Oth] under Sheets onto the dashboard sheet below the [Diverging Chart]. Drag [CI - Oth] below the [Confidence Interval] chart 
+- Click on one of the chart within the dashboard and change the layout from Standard to Entire View. Repeat for the other charts <br>
+![](images/13.4.png){width=60%} <br>
+- From the left Dashboard pane, drag Text under Objects to the top of the dashboard to add the dashboard title and lead in paragraph <br>
+![](images/13.5.png){width=30%} <br>
+- Enter the text below with the relevant formatting <br>
+![](images/13.6.png){width=50%} <br>
+- Resize the title area by hovering along the bottom of the text box until the resize arrow appears 
+- With selection still on the title area, toggle the left pane to Layout tab. Under Background, change it to Green colour
+- Drag another Text under Objects to the space between title and the top row of charts to add the question label for the top row of charts as below. Enter the text below with the relevant formatting <br>
+![](images/13.7.png){width=50%} <br>
+- With selection still on the same text area, toggle the left pane to Layout tab. Under Background, change it to Green colour
+- Double click on the title chart of the top two charts and reduce the font size
+- Double click on the bottom two charts and revise their chart titles to reflect the same titles as their top charts
+- Select the Segment Selection Parameter and drag it to the top beside the dashboard title as a new column. Click on the dropdown arrow on the left and select Compact List <br>
+![](images/13.9.png){width=30%} <br>
+- Select the “Selected” Filter and drag it to the same column under the Segment Selection Parameter
+- Click on the dropdown arrow on the left and select Apply to Worksheets > All Using This Data Source <br>
+![](images/13.10.png){width=50%} <br>
+- With selection still on the “Selected” Filter, double click on the Filter title and change it to “Sub-segments” 
+- Select the Sort Descending by Parameter and drag it to the same column under the Segment Filter. Click on the dropdown arrow on the left and select Compact List
+- Select the Timeframe Parameter and drag it to beside the “I will definitely get the Covid-19 vaccine…” text. Right click within the parameter and unselect Show Title <br>
+![](images/13.11.png){width=80%} <br>
+- Select the Other Findings Parameter and drag it to between the two rows of charts. Click on the dropdown arrow on the right and select Compact List. Click on the dropdown arrow again and select Customize > untick Show “All” Values
+- With selection still on the Other Findings Parameter, toggle the left pane to Layout tab. Under Background, change it to Green colour
+- On the Other Findings Parameter, click on the dropdown arrow on the right and select Apply to Worksheets > Selected Worksheets. In the popup “Apply Filter to Worksheets” window, check “CI – Oth” <br>
+![](images/13.15.png){width=70%} <br>
+- Select the Measure Names Legend. Click on the Remove from Dashboard button <br>
+![](images/13.12.png){width=40%} <br>
+- Select the Level of Agreement Legend and drag it to under the first row stacked bar chart. Click on the dropdown arrow on the right and unselect Show Title. Click on the dropdown arrow again and select Arrange items > Single row <br>
+![](images/13.13.png){width=40%} <br>
+- Select the second row diverging stacked bar chart. Click on the dropdown arrow on the right and select Legends > Colour Legend (Question Response) <br>
+![](images/13.14.png){width=80%} <br>
+- Select the new Level of Agreement Legend and drag it to under the second row stacked bar chart. Click on the dropdown arrow on the right and unselect Show Title. Click on the dropdown arrow again and select Arrange items > Single row 
+- Drag the plot areas to align the country rows on the left and right charts
+
 
 # 4.0  Final Data Visualisation Output
 
 ```{r, echo=FALSE, message=FALSE, layout="l-body-outset"}
 
-
+knitr::include_graphics("images/Dashboard.png")
 ```
 
-**Link to Tableau Dashboard:**
+**Link to Tableau Dashboard:** https://public.tableau.com/profile/selenechoong#!/vizhome/ISSS608_DataViz_Makeover_02/Dashboard
 
 
 # 5.0  Major Observations
