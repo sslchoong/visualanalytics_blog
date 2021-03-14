@@ -2,7 +2,7 @@
   {
     "path": "posts/2021-03-14-dataviz-makeover-3/",
     "title": "DataViz Makeover 3",
-    "description": "A short description of the post.",
+    "description": "A makeover of a data visualisation on [South-east Asia Armed Conflict Analysis](https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis) created to reveal the spatio-temporal patterns of armed conflict in selected South-east Asia countries between 2015 to 2020. Data was obtained from [The Armed Conflict Location & Event Data Project (ACLED)](https://acleddata.com/data-export-tool/).",
     "author": [
       {
         "name": "Selene Choong",
@@ -11,9 +11,9 @@
     ],
     "date": "2021-03-14",
     "categories": [],
-    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "contents": "\r\n1.0 Critiques of Existing Visualisation with Suggested Improvements\r\nClarity\r\nAesthetics\r\nInteractivity\r\n2.0 Ways to Improve Current Visualisation\r\n3.0 Step-by-step Description on Preparation\r\n4.0 Final Data Visualisation Output\r\n5.0 Major Observations\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-03-14T16:55:03+08:00",
+    "last_modified": "2021-03-14T17:05:08+08:00",
     "input_file": "dataviz-makeover-3.utf8.md"
   },
   {

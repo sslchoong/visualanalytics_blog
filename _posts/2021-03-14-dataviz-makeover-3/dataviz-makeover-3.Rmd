@@ -1,7 +1,7 @@
 ---
 title: "DataViz Makeover 3"
 description: |
-  A short description of the post.
+  A makeover of a data visualisation on [South-east Asia Armed Conflict Analysis](https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis) created to reveal the spatio-temporal patterns of armed conflict in selected South-east Asia countries between 2015 to 2020. Data was obtained from [The Armed Conflict Location & Event Data Project (ACLED)](https://acleddata.com/data-export-tool/).
 author:
   - name: Selene Choong
     url: https://www.linkedin.com/in/selenechoong/
