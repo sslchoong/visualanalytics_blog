@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-03-14-dataviz-makeover-3/",
+    "title": "DataViz Makeover 3",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Selene Choong",
+        "url": "https://www.linkedin.com/in/selenechoong/"
+      }
+    ],
+    "date": "2021-03-14",
+    "categories": [],
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-03-14T16:55:03+08:00",
+    "input_file": "dataviz-makeover-3.utf8.md"
+  },
+  {
     "path": "posts/2021-02-12-dataviz-makeover-2/",
     "title": "DataViz Makeover 2",
     "description": "A makeover of a data visualisation on the willingness of the public towards Covid-19 vaccination. Data was obtained from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github (https://github.com/YouGov-Data/covid-19-tracker), with the focus on survey data collected in January 2021.",
