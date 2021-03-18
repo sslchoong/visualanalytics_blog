@@ -2364,19 +2364,22 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="creating-proportional-symbol-map-armed-conflict-event-occurrence">3.5 Creating Proportional Symbol Map (Armed Conflict Event Occurrence)</h2>
 <h3 id="standardising-the-mapping-level">Standardising the Mapping Level</h3>
 <ul>
-<li><p>Click on the Add New Worksheet button to the right of “Tooltip” worksheet to add a new worksheet</p></li>
-<li><p>Checking the number of counts for the different spatial variables showed that [ADMIN1] (corresponds to provincial level, or similar) is the lowest common mapping level available across all the data points <br> <img src="images/7.1.png" style="width:30.0%" /></p></li>
-<li><p>From the left Data pane, drag [ADMIN1] into the chart canvas. Click on “236 unknown” message at the bottom right of the canvas. In the popup “Edit Locations” dialog box, click on the dropdown button for Country/Region and select From field &gt; select COUNTRY <br> <img src="images/7.2.png" style="width:90.0%" /></p></li>
-<li><p>43 unknown provinces remained. Further investigation found that some of the province naming was not consistent with Tableau map data names (e.g. Indonesia provinces were spelled in Indonesia instead of the English names in the dataset) and others were at the same mapping level (e.g. Philippines captured regions under ADMIN1 and the province was given under ADMIN2)</p></li>
-<li><p>To address the mapping issue identified, a new calculated field will be created. Click Analysis &gt; Create Calculated Field. Rename the new field as [Provincial Level] and input the formula below then click OK <br> <img src="images/7.3.PNG" style="width:70.0%" /></p></li>
-<li><p>Clear the worksheet by clicking on the Clear Worksheet button <br> <img src="images/7.4.png" style="width:100.0%" /> ### Generating the Chart</p></li>
-<li><p>From the left Data pane, drag [Provincial Level] into the chart canvas. Click on unknown message at the bottom right of the canvas. In the popup “Edit Locations” dialog box, click on the dropdown button for Country/Region and select From field &gt; select COUNTRY</p></li>
-<li><p>Within the same “Edit Locations” dialog box, under the State/Province tab, select the respective province names from the list under Matching Location for the remaining unknowns which is due to difference in naming <br> <img src="images/7.5.PNG" style="width:60.0%" /></p></li>
-<li><p>From the left Data pane, drag [Union (Count)] and [EVENT_TYPE] to Size and Detail under the Marks cart respectively. Drag another [EVENT_TYPE] to Color <br> <img src="images/7.6.PNG" style="width:30.0%" /></p></li>
-<li><p>Click on Size under the Marks cart and increase the size of the circles</p></li>
-<li><p>Click on Color under the Marks cart. Change the Opacity to 70% and click the dropdown button under Border to add a light grey border <br> <img src="images/7.7.png" style="width:30.0%" /></p></li>
-<li><p>Click on Tooltip under the Marks cart. Edit the tooltip according to the image below <br> <img src="images/7.8.PNG" style="width:60.0%" /></p></li>
-<li><p>Right click on the Sheet 4 tab on the bottom bar and select Rename. Rename the sheet to “Proportional Map”</p></li>
+<li>Click on the Add New Worksheet button to the right of “Tooltip” worksheet to add a new worksheet</li>
+<li>Checking the number of counts for the different spatial variables showed that [ADMIN1] (corresponds to provincial level, or similar) is the lowest common mapping level available across all the data points <br> <img src="images/7.1.png" style="width:30.0%" /></li>
+<li>From the left Data pane, drag [ADMIN1] into the chart canvas. Click on “236 unknown” message at the bottom right of the canvas. In the popup “Edit Locations” dialog box, click on the dropdown button for Country/Region and select From field &gt; select COUNTRY <br> <img src="images/7.2.png" style="width:90.0%" /></li>
+<li>43 unknown provinces remained. Further investigation found that some of the province naming was not consistent with Tableau map data names (e.g. Indonesia provinces were spelled in Indonesia instead of the English names in the dataset) and others were at the same mapping level (e.g. Philippines captured regions under ADMIN1 and the province was given under ADMIN2)</li>
+<li>To address the mapping issue identified, a new calculated field will be created. Click Analysis &gt; Create Calculated Field. Rename the new field as [Provincial Level] and input the formula below then click OK <br> <img src="images/7.3.PNG" style="width:70.0%" /></li>
+<li>Clear the worksheet by clicking on the Clear Worksheet button <br> <img src="images/7.4.png" style="width:100.0%" /></li>
+</ul>
+<h3 id="generating-the-chart-2">Generating the Chart</h3>
+<ul>
+<li>From the left Data pane, drag [Provincial Level] into the chart canvas. Click on unknown message at the bottom right of the canvas. In the popup “Edit Locations” dialog box, click on the dropdown button for Country/Region and select From field &gt; select COUNTRY</li>
+<li>Within the same “Edit Locations” dialog box, under the State/Province tab, select the respective province names from the list under Matching Location for the remaining unknowns which is due to difference in naming <br> <img src="images/7.5.PNG" style="width:60.0%" /></li>
+<li>From the left Data pane, drag [Union (Count)] and [EVENT_TYPE] to Size and Detail under the Marks cart respectively. Drag another [EVENT_TYPE] to Color <br> <img src="images/7.6.PNG" style="width:30.0%" /></li>
+<li>Click on Size under the Marks cart and increase the size of the circles</li>
+<li>Click on Color under the Marks cart. Change the Opacity to 70% and click the dropdown button under Border to add a light grey border <br> <img src="images/7.7.png" style="width:30.0%" /></li>
+<li>Click on Tooltip under the Marks cart. Edit the tooltip according to the image below <br> <img src="images/7.8.PNG" style="width:60.0%" /></li>
+<li>Right click on the Sheet 4 tab on the bottom bar and select Rename. Rename the sheet to “Proportional Map”</li>
 </ul>
 <h2 id="creating-time-series-line-chart-fatalities">3.6 Creating Time Series Line Chart (Fatalities)</h2>
 <h2 id="dashboard">3.7 Dashboard</h2>

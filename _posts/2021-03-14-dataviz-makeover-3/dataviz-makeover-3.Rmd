@@ -241,6 +241,7 @@ For ease of subsequent merging in Tableau, Prof Kam’s dataset will also be con
 ![](images/7.3.png){width=70%}
 - Clear the worksheet by clicking on the Clear Worksheet button <br>
 ![](images/7.4.png){width=100%}
+
 ### Generating the Chart
 
 - From the left Data pane, drag [Provincial Level] into the chart canvas. Click on unknown message at the bottom right of the canvas. In the popup “Edit Locations” dialog box, click on the dropdown button for Country/Region and select From field > select COUNTRY
