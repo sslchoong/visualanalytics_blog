@@ -28,7 +28,7 @@ knitr::include_graphics("images/Fig1_ExistingViz.png")
 |S/N| Comments | Suggested Improvement |
 |:-:| :------------------------------- | :------------------------------- |
 | 1 | While the current map chart provides detailed information where each point represents each event, it is difficult for readers to compare the spatial data across the regions or countries especially when viewing at the “All” countries level. All the data symbols are cluttered and overlapping each other. | To allow for easier comparison of spatial patterns of armed conflicts, proportional symbol map can be adopted |
-| 2 | Data used in the visualisation for 2020 ends at 31 October 2020 and hence is not complete with event data for November and December missing. Also, data for the Philippines only starts from January 2016 onwards. Readers might be misled by the current time period label of 2015 to 2020, without noticing the presence of the missing data points (i.e. events under-represent for 2020 and missing data for 2015 for the Philippines). | To download additional data from ACLED for 1 November to 31 December 2020 and provide a complete picture for 2020 events. Only data from 2016 onwards will be used in the visualisation to ensure data is available for the whole timeframe for all the countries shown |
+| 2 | Data used in the visualisation for 2020 ends at 31 October 2020 and hence is not complete with event data for November and December missing. Also, data for the Philippines and Malaysia only starts from January 2016 and 2018 onwards respectively. Readers might be misled by the current time period label of 2015 to 2020, without noticing the presence of the missing data points (i.e. events under-represent for 2020 and missing data for the Philippines and Malaysis). | To download additional data from ACLED for 1 November to 31 December 2020 and provide a complete picture for 2020 events. A year filter will be added to allow users to identify the differences across countries |
 | 3 | Each of the data symbol on the map chart is currently showing the spatial information of “Event Id Cnty”, “Latitude” and “Longitude” only in the tooltip. While the map allows readers to identify the country that the event has occurred, readers are not able to easily identify the specific location of the event from the latitude and longitude coordinates. “Event Id Cnty” might also confused readers who are not familiar with the dataset. | Include the province or district label (depending on the level of mapping used) in tooltip and replace “Event Id Cnty” with the country name instead |
 | 4 | Each of the event types are being shown as separate line charts and the scale of the y-axis of these charts are not synchronised. Sequence of the charts also changes when filtering between countries. This makes it difficult for the readers to compare across the line charts by event type and by country. | Chart all the event types in one chart with each line represented by their corresponding colours used in the map chart |
 | 5 | While there are existing labels for the y-axis of the line charts (Count of Sheet 1), they were not properly labelled to indicate what do the values of the lines represent exactly. | Revise the labelling of the axis to allow readers to clearly identify the data being charted (i.e. count of event occurrence) |
@@ -70,7 +70,7 @@ knitr::include_graphics("images/Fig2_Sketch.jpg")
 
 ## 3.1 Data Source
 
-Data used for this visualisation can be downloaded from [The Armed Conflict Location & Event Data Project (ACLED)](https://acleddata.com/data-export-tool/), focusing only on the South-east Asia dataset. While some of the South-east Asia countries have data starting from January 2010, only data from January 2016 onwards will be used as data for Philippines starts from 2016. Data is also available till date of download but only data up till 31 December 2020 (the last complete year) will be used.
+Data used for this visualisation can be downloaded from [The Armed Conflict Location & Event Data Project (ACLED)](https://acleddata.com/data-export-tool/), focusing only on the South-east Asia dataset. While some of the South-east Asia countries have data starting from January 2010, only data from January 2015 onwards will be used. Data is also available till date of download but only data up till 31 December 2020 (the last complete year) will be used.
 
 ## 3.2 Data Preparation
 
@@ -87,7 +87,7 @@ Exploring the dataset revealed the following:
 
 -	South-east Asia countries covered include Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Thailand and Vietnam. Three countries that were not included were Brunei, Timor-Leste and Singapore
 - Dataset shared by Prof Kam only covers up till 31 October 2020
--	Data for Philippines only start from January 2016, unlike the other countries which have 2015 data
+-	Data for Philippines and Malaysia only start from January 2016 and January 2018, unlike the other countries which have 2015 data
 - There is a varying level of certainty of date and location across the events in the dataset
 
 ### Filtering Relevant Data from ACLED Dataset [Excel Worksheet]
@@ -136,7 +136,7 @@ For ease of subsequent merging in Tableau, Prof Kam’s dataset will also be con
 
 -	Click Add in the Filters section in the upper-right corner of the data source page <br>
 ![](images/2.3.png){width=50%}
--	In the popup “Edit Data Source Filters”dialog box, click Add to open an Add Filter dialog box listing all fields in the data source. Search for [EVENT_DATE] and select the field > specify Range of Dates in the popup “Filter Field” dialog box > Indicate 1/1/2016 as the start date and keep 31/12/2020 as the end date. Click OK <br>
+-	In the popup “Edit Data Source Filters”dialog box, click Add to open an Add Filter dialog box listing all fields in the data source. Search for [EVENT_DATE] and select the field > specify Range of Dates in the popup “Filter Field” dialog box > Indicate 1/1/2015 as the start date and keep 31/12/2020 as the end date. Click OK <br>
 ![](images/2.4.png){width=70%}
 
 
@@ -371,3 +371,52 @@ knitr::include_graphics("images/Dashboard.png")
 
 
 # 5.0  Major Observations
+
+**Observation 1:** <br>
+Across the selected South-east Asia countries, events of violence against civilians have generally dropped across the years from 2016 onwards to 2020, with a steep decline between 2016 to 2018. However, there has been an increase in the numbers of protests across the years, steadily between 2017 to 2020. The number of protests overtook the number of violence against civilians in 2018.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs1_ViolencevsProtests.png")
+```
+
+**Observation 2:** <br>
+Myanmar and Philippines experienced the most cases of violence events (battles, explosions/ remote violence and violence against civilians) among the selected South-east Asia countries between the observed period.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs2_Violence&Battles.png")
+```
+
+**Observation 3:** <br>
+There was a spike in the number of fatalities caused by the armed conflict events in the selected South-east Asia countries in 2019. Further breakdown of the fatalities by events showed that battles was the main contributor of fatalities in 2019 among the different event types. Battles resurfaced as the main contributor after 3 years (2016 to 2018) where violence against civilians was previously the main contributor.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs3_2019Battles.png")
+```
+
+**Observation 4:** <br>
+Thailand experienced a huge increase in the number of protests in 2020 as compared to 2019. Most of the protests occurred in the capital Bangkok, of which most of them were peaceful protests.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs4_Thailand.png")
+```
+
+**Observation 5:** <br>
+Comparing the spatio-temporal patterns of the armed conflicts in Myanmar between 2015 to 2020, we observed a shift in the locations of the events from North to South over the years.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs5_Myanmar.png")
+```
+
+**Observation 6:** <br>
+As compared to the 7 other selected South-east Asia countries covered, Laos have generally low number of armed conflict events where the number of occurrences were less than 10 for each year between 2015 to 2020.
+
+```{r, echo=FALSE, message=FALSE}
+
+knitr::include_graphics("images/Obs5_Laos.png")
+```
+
