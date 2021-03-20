@@ -47,7 +47,7 @@ knitr::include_graphics("images/Fig1_ExistingViz.png")
 |S/N| Comments | Suggested Improvement |
 |:-:| :------------------------------- | :------------------------------- |
 | 10 | Selecting data points on the line charts do not affect the visualisation within the map chart and vice versa, lacking the interactive filtering to only show the corresponding value on the other charts based on the reader’s selection within the chart | Set the line charts as one of the filter for the dashboard to allow dynamic changes in the map chart based on selection on the line chart |
-| 11 | While there is a country filter to allow readers to select their country of interest, there is currently no parameter to allow filtering by year. For the map chart, all events from 2015 to 2020 are shown and readers cannot see the spatial patterns by years of interest | Add a slider filter by year to allow users to select the time period of interest |
+| 11 | While there is a country filter to allow readers to select their country of interest, there is currently no parameter to allow filtering by year. For the map chart, all events from 2015 to 2020 are shown and readers cannot see the spatial patterns by years of interest | Add a filter by year to allow users to select the year of interest |
 | 12 | Using tooltips allow readers to obtain more information on each data point that they toggled over, instead of cluttering the information within the visualisation. More information can be included in the tooltip | Include more detail information such as breakdown by sub-event type within the tooltip |
 | 13 | Sorting is useful to expose patterns but the usage of sorting for the event types (i.e. sequence of line charts) might be confusing to readers since the variable that the sorting is based on might be unclear | If sorting is used, suggest to include a label on how sorting is done (i.e. variable used for sorting, ascending or descending) |
 
@@ -150,32 +150,33 @@ For ease of subsequent merging in Tableau, Prof Kam’s dataset will also be con
 ![](images/3.2.png){width=40%}
 - Drag [EVENT_ID_CNTY] and [EVENT_TYPE] from the left Data pane to Detail and Color under the Marks cart respectively <br>
 ![](images/3.3.png){width=30%}
-- Drag [EVENT_DATE] from left data pane to the Filters shelf and select range of dates in the popup “Filter Field” dialog box. In the popup “Filter” dialog box, click OK <br>
+- Drag [YEAR] from left data pane to the Filters shelf. In the popup “Filter” dialog box, click on All and click OK <br>
 ![](images/3.4.png){width=90%}
-- Toggle to [EVENT_DATE] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter <br>
+- Toggle to [YEAR] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter <br>
 ![](images/3.5.png){width=30%}
--	Toggle again to [EVENT_DATE] under Filter shelf and click on the dropdown button to the right of the pill. Select Apply to Worksheets > All Using This Data Source to apply the filter to all the worksheets <br>
-![](images/3.10.png){width=50%}
-
+- Click on the dropdown button at the top right of the YEAR Filter. Select Single Value (list) <br>
+![](images/3.11.png){width=30%}
 - Drag [COUNTRY] from the left Data pane to the Filters shelf. In the popup “Filter” dialog box, click OK <br>
 ![](images/3.6.png){width=90%}
 - Toggle to [COUNTRY] under Filter shelf and click on the dropdown button to the right of the pill. Select Show Filter
-- Click on the dropdown button at the top right of the COUNTRY Filter. Select Single Value (list)
-- Toggle to [COUNTRY] under Filter shelf and click on the dropdown button to the right of the pill. Select Apply to Worksheets > All Using This Data Source to apply the filter to all the worksheets
-- Rename the title of the EVENT_DATE Filter to proper case and replacing hyphen with space by clicking on the dropdown button at the top right of the COUNTRY Filter and select Edit Title. Repeat for the COUNTRY Filter and the EVENT_TYPE Legend <br>
+- Click on the dropdown button at the top right of the COUNTRY Filter. Select Single Value (list) <br>
 ![](images/3.7.png){width=60%}
+- Rename the title of the YEAR Filter to proper case by clicking on the dropdown button at the top right of the YEAR Filter and select Edit Title. Repeat for the COUNTRY Filter and the EVENT_TYPE Legend
 - Click on the dropdown button at the top right of the Event Type Filter and select Edit Colors. In the popup “Edit Colors” dialog box, change the colors of each event type as below – Violence events in shades of red, yellow and orange; Demonstrations in shade of blue; Non-violent actions in shade of green <br>
 ![](images/3.8.png){width=60%}
 - Click on Color under the Marks cart and change the opacity to 50% to allow users to see overlapping points. Border was not added due to the large amount of overlaps <br>
 ![](images/3.9.png){width=30%}
+- Double click on the sheet title. In the popup "Edit Title" dialog box, amend the sheet title to “Armed Conflict Location & Event, <YEAR>” and click OK
 - Right click on the Sheet 1 tab on the bottom bar and select Rename. Rename the sheet to “Point Map”
 
 ### Creating the Tooltip
 
--	On the “Point Map” sheet, drag [COUNTRY], [LOCATION], [SUB_EVENT_TYPE] and [FATALITIES] from the left Data pane to Tooltip under the Marks cart <br>
-![](images/4.1.png){width=30%}
--	Click on Tooltip under the Marks cart. Edit the tooltip according to the image below <br>
+-	On the “Point Map” sheet, drag [COUNTRY], [LOCATION], [SUB_EVENT_TYPE], [FATALITIES] and [EVENT_DATE] from the left Data pane to Tooltip under the Marks cart <br>
+![](images/4.1.png){width=35%}
+-	Click on Tooltip under the Marks cart. Edit the tooltip according to the image below. Click OK <br>
 ![](images/4.2.png){width=60%}
+- Toggle to [ATTR(EVENT_DATE)] under Marks Cart and click on the dropdown button to the right of the pill. Select Format. Toggle to Pane tab. Under Default, change the Dates to “14 Mar 2001” <br>
+![](images/4.3.png){width=30%}
 
 ## 3.4 Creating Time-Series Line Chart (Armed Conflict Event by Type)
 
@@ -189,15 +190,16 @@ For ease of subsequent merging in Tableau, Prof Kam’s dataset will also be con
 ![](images/5.3.png){width=30%}
 - Right click on the y-axis and select Format. Within Axis tab, under Scale, change the Numbers to “Number (Standard)” and change the Ticks to a dark colour <br>
 ![](images/5.5.png){width=50%}
-- Right click on the y-axis and select Edit Axis. In the popup “Edit Axis” dialog box, change the Title under Axis Titles to “Number of Events” <br>
+- Right click on the y-axis and select Edit Axis. In the popup “Edit Axis” dialog box, change the Title under Axis Titles to “Number of Events”. Close the dialog box <br>
 ![](images/5.6.png){width=55%}
 - Right click on the y-axis label at the top “EVENT_DATE” and select Hide Field Labels for Columns <br>
 ![](images/5.7.png){width=60%}
-- Right click on the Sheet 2 tab on the bottom bar and select Rename. Rename the sheet to “Time Series”
+- Double click on the sheet title. In the popup "Edit Title" dialog box, amend the sheet title to “Armed Conflict Event by Type over Time” and click OK
+- Right click on the Sheet 2 tab on the bottom bar and select Rename. Rename the sheet to “Events”
 
 ### Creating the Tooltip
 
-- Click on the Add New Worksheet button to the right of “Time Series” worksheet to add a new worksheet
+- Click on the Add New Worksheet button to the right of “Events” worksheet to add a new worksheet
 - From the left Data pane, drag [SUB_EVENT_TYPE] to Rows and [Union (Count)] under Columns <br>
 ![](images/6.1.png){width=40%}
 - Drag [Union (Count)] from the left Data pane to Label under the Marks cart
@@ -222,7 +224,7 @@ For ease of subsequent merging in Tableau, Prof Kam’s dataset will also be con
 ![](images/6.9.png){width=40%}
 - Hover along the y-axis for the resize arrow to appear and adjust the position of the y-axis to show the full label for each bar
 - Resize the chart size to a smaller area to fit into the tooltip by hovering along the bottom or right of the chart area until the resize arrow appears
-- Right click on the Sheet 3 tab on the bottom bar and select Rename. Rename the sheet to “Tooltip”
+- Right click on the Sheet 3 tab on the bottom bar and select Rename. Rename the sheet to “Tooltip Event”
 - Navigate back to the “Time Series” worksheet
 - Click on Tooltip under the Marks cart. Edit the tooltip according to preference. Add the Tooltip chart by clicking on the Insert > Sheets > Tooltip. Amend the dimensions of the chart in the given syntax. Below is the syntax used for the current tooltip shown <br>
 ![](images/6.10.png){width=60%}
@@ -231,7 +233,7 @@ For ease of subsequent merging in Tableau, Prof Kam’s dataset will also be con
 
 ### Standardising the Mapping Level
 
--	Click on the Add New Worksheet button to the right of “Tooltip” worksheet to add a new worksheet
+-	Click on the Add New Worksheet button to the right of “Tooltip Event” worksheet to add a new worksheet
 - Checking the number of counts for the different spatial variables showed that [ADMIN1] (corresponds to provincial level, or similar) is the lowest common mapping level available across all the data points <br>
 ![](images/7.1.png){width=30%}
 - From the left Data pane, drag [ADMIN1] into the chart canvas. Click on “236 unknown” message at the bottom right of the canvas. In the popup “Edit Locations” dialog box, click on the dropdown button for Country/Region and select From field > select COUNTRY <br>
@@ -254,15 +256,118 @@ For ease of subsequent merging in Tableau, Prof Kam’s dataset will also be con
 ![](images/7.7.png){width=30%}
 - Click on Tooltip under the Marks cart. Edit the tooltip according to the image below <br>
 ![](images/7.8.png){width=60%}
+- Double click on the sheet title. In the popup "Edit Title" dialog box, amend the sheet title to “Armed Conflict Event Occurrence, <YEAR>” and click OK
 - Right click on the Sheet 4 tab on the bottom bar and select Rename. Rename the sheet to “Proportional Map”
 
 
 ## 3.6 Creating Time Series Line Chart (Fatalities)
 
+### Generating the Chart
 
+- Click on the Add New Worksheet button to the right of “Proportional Map” worksheet to add a new worksheet
+- From the left Data pane, drag [FATALITIES] to Rows and [EVENT_DATE] under Columns <br>
+![](images/8.1.png){width=40%}
+- Click on Color under the Marks cart and change the colour of the line to grey <br>
+![](images/8.2.png){width=30%}
+- Right click on the y-axis and select Format. Within Axis tab, under Scale, change the Numbers to “Number (Standard)” and change the Ticks to a dark colour 
+- Right click on the y-axis and select Edit Axis. In the popup “Edit Axis” dialog box, change the Title under Axis Titles to “Number of Fatalities”.  Close the dialog box <br>
+![](images/8.3.png){width=55%}
+- Right click on the y-axis label at the top “EVENT_DATE” and select Hide Field Labels for Columns
+- Double click on the sheet title. In the popup "Edit Title" dialog box, amend the sheet title to “Fatalities over Time” and click OK
+- Right click on the Sheet 5 tab on the bottom bar and select Rename. Rename the sheet to “Fatalities”
+
+### Creating the Tooltip
+
+- Click on the Add New Worksheet button to the right of “Fatalities” worksheet to add a new worksheet
+- From the left Data pane, drag [EVENT_TYPE] to Rows and [FATALITIES] under Columns <br>
+![](images/9.1.png){width=40%}
+- Drag [FATALITIES] from the left Data pane to Label under the Marks cart
+- Toggle to [SUM(FATALITIES)] under Marks cart and click on the dropdown button to the right of the pill. Select Quick Table Calculation > Percent of Total to create the percentage label
+- Drag another [FATALITIES] from the left Data pane to Label under the Marks cart. This is meant for the count label <br>
+![](images/9.2.png){width=30%}
+- Click on Label under the Marks cart then the button with 3 dots under Text. Update the label to <% of Total SUM(FATALITIES)> (<SUM(FATALITIES)>) and reduce the font size to 8pt then click OK
+- Toggle to the [SUM(FATALITIES)] with Table Calculation under Marks cart and click on the dropdown button to the right of the pill. Select Format. Under Pane tab, change the Numbers under Default section to Percentage with 1 decimal place
+- Click on Sort button to the right of the x-axis label to sort the bars in descending order
+- Drag [EVENT_TYPE] from the left Data pane to Color under the Marks cart <br>
+![](images/9.3.png){width=30%}
+- Right click within the area of the chart and select Format. Click on the Lines button. Under Sheet tab, click on Grid Lines and select None
+- Right click on the x-axis and untick Show Header to hide the x-axis
+- Right click on the “EVENT_TYPE” label just above the y-axis and select Hide Field Labels for Rows
+- Right click on the y-axis and select Format. Within the Header tab, change the Font to 8pt under Default
+- Click on Size under the Marks cart and reduce the thickness of the bars
+- Hover along the y-axis for the resize arrow to appear and adjust the position of the y-axis to show the full label for each bar
+- Resize the chart size to a smaller area to fit into the tooltip by hovering along the bottom or right of the chart area until the resize arrow appears
+- Right click on the Sheet 6 tab on the bottom bar and select Rename. Rename the sheet to “Tooltip Fatalities”
+- Navigate back to the “Fatalities” worksheet
+- Click on Tooltip under the Marks cart. Edit the tooltip according to preference. Add the Tooltip chart by clicking on the Insert > Sheets > Tooltip. Amend the dimensions of the chart in the given syntax. Below is the syntax used for the current tooltip shown <br>
+![](images/9.4.png){width=60%}
 
 ## 3.7 Dashboard
 
+### Adding the Relevant Worksheets
+
+- Click on the New Dashboard button on the bottom bar to create a new dashboard sheet <br>
+![](images/10.1.png){width=70%}
+- In the left Dashboard pane, under Size, change it to Automatic <br>
+![](images/10.2.png){width=30%}
+- From the left Dashboard pane, drag [Point Map] under Sheets onto the dashboard canvas then drag [Events] to the right of the [Point Map]. Drag [Proportional Map] and [Fatalities] to below [Point Map] and [Events] on the canvas <br>
+![](images/10.3.png){width=100%}
+
+### Formatting
+
+- Double click on one of the chart titles. Reduce the font size to 14pt and bold the title. Repeat for the other 3 charts
+- Click on the [Country] filter and click the dropdown arrow on the left. Select Apply to Worksheets > All Using This Data Source. Repeat for the [Year] filter <br>
+![](images/10.4.png){width=40%}
+- Click on the [Year] filter and click the dropdown arrow on the left. Select Apply to Worksheets > Selected Worksheets. In the popup “Apply Filter to Worksheets” dialog box, check only Proportional Map, Title, Tooltip Event and Tooltip Fatalities. Click OK <br>
+![](images/10.11.png){width=40%}
+- Click on [Count of Union] Legend and click the dropdown arrow on the left. Select Edit Title. In the popup “Edit Legend Title” dialog box, change the title to “Event Count”
+- Right click within the chart area of “Armed Conflict Event Occurrence” chart and select Clear Manual Sizing to resize the map and remove the scrollbar <br>
+![](images/10.5.png){width=60%}
+- Toggle along the mid-line between the two columns of charts and shift the line to the right to expand the width of the map charts
+
+### Adding a Dynamic Dashboard Title
+
+- Click on the Add New Worksheet button to the right of “Dashboard 1” to add a new worksheet
+- From the left Data pane, drag [COUNTRY] to Detail under the Marks cart <br>
+![](images/10.6.png){width=30%}
+- Remove the [Longitude (generated)] and [Latitude (generated)] from Columns and Rows respectively
+- Under the Marks cart, change the mark type to Polygon <br>
+![](images/10.7.png){width=30%}
+- Double click on the sheet title. In the popup "Edit Title" dialog box, amend the sheet title to “Armed Conflict Events in **<COUNTRY>**” and click OK
+- Right click on the Sheet 7 tab on the bottom bar and select Rename. Rename the sheet to “Title”
+- Toggle back to “Dashboard 1”
+- From the left Dashboard pane, drag [Title] under Sheets onto the top of the dashboard canvas
+- Right click within the area of “Title” and select Fit > Entire View <br>
+![](images/10.8.png){width=50%}
+- Resize the title area by hovering along the bottom of the text box until the resize arrow appears
+- From the left Dashboard pane, drag Text under Objects to the top of the dashboard <br>
+![](images/10.9.png){width=30%}
+- In the popup "Edit Text" dialog box, input the following description as the lead-in paragraph <br>
+![](images/10.10.png){width=50%}
+
+### Uploading the Dashboard to Tableau Public
+- At the bottom bar, select all worksheets by pressing shift and select on each worksheet. Right click and select Hide <br>
+![](images/11.1.png){width=80%}
+- Toggle back to “Data Source”
+- At the top right corner under Connection, convert the connection from Live to Extract to allow publishing to Tableau Public <br>
+![](images/11.2.png){width=30%}
+- Toggle back to “Dashboard 1”
+- Right click on the Dashboard 1 tab on the bottom bar and select Rename. Rename the sheet to “Dashboard”
+- On the top navigation pane, click Server > Tableau Public > Save to Tableau Public As  <br>
+![](images/11.3.png){width=60%}
+- In the popup “Tableau Public Sign In” dialog box, key in the relevant email and password to sign in
+- In the popup “Save Workbook to Tableau Public” dialog box, give the workbook the relevant title and click Save
+- The final workbook will be published onto Tableau Public
+
+
 # 4.0  Final Data Visualisation Output
+
+```{r, echo=FALSE, message=FALSE, layout="l-body-outset"}
+
+knitr::include_graphics("images/Dashboard.png")
+```
+
+**Link to Tableau Dashboard:** https://public.tableau.com/profile/selenechoong#!/vizhome/ISSS608DataVizMakeover3/Dashboard
+
 
 # 5.0  Major Observations
